@@ -6,7 +6,7 @@ title: What is Dexetera?
 
 # What is Dexetera?
 
-Dexetera is a **decentralized exchange (DEX)** for trading synthetic futures contracts. Unlike centralized exchanges (like Coinbase or Kraken), Dexetera has no company, no central authority, and no KYC requirements. It operates entirely through smart contracts on the Arbitrum blockchain.
+Dexetera is a **decentralized exchange (DEX)** for trading synthetic futures contracts. Unlike centralized exchanges (like Coinbase or Kraken), Dexetera has no company, and no central authority. It operates entirely through smart contracts on the Hyperliquid blockchain.
 
 ## Core Concepts Explained
 
@@ -39,10 +39,11 @@ A **futures contract** is an agreement to buy or sell something at a future date
 
 ### USDC: Why We Use It
 
+While the entire trading happens on the Hyperliquid network, we use USDC on Arbitrum for deposits and withdrawals.
+
 **USDC (USD Coin)**
 - A stablecoin pegged to the US Dollar
-- 1 USDC = 1 USD (in theory)
-- Built on Arbitrum blockchain
+- 1 USDC = 1 USD 
 - Easier to understand than other cryptocurrencies
 - Reduces confusion about deposits and withdrawals
 
@@ -99,7 +100,6 @@ Everything is **permissionless**—controlled by smart contracts, not people.
 | Aspect | Dexetera | Centralized Exchange | Traditional Broker |
 |--------|----------|----------------------|-------------------|
 | **Control** | You (wallet) | Company | Company |
-| **KYC** | No | Yes | Yes |
 | **Speed** | Instant (blockchain) | 1-2 seconds | Instant |
 | **Privacy** | High | Low | Low |
 | **Asset variety** | Any measurable metric | Pre-selected assets | Limited |
@@ -107,9 +107,9 @@ Everything is **permissionless**—controlled by smart contracts, not people.
 | **Fees** | Transparent (blockchain) | Hidden | Hidden |
 | **24/7 trading** | Yes | Limited | Limited |
 
-## Important: This is Advanced Trading
+## Important: This is Trading
 
-Dexetera is **not for beginners** learning basic investing. It's designed for:
+Dexetera is designed for:
 
 - Experienced traders comfortable with leverage
 - People who understand smart contracts and blockchain

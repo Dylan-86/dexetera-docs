@@ -49,7 +49,7 @@ Every Dexetera futures contract has a **1-year lifespan**:
 - **Creation**: Contract is created on a specific date
 - **Life**: Traders can open/close positions for 1 year
 - **Maturity (Day 365)**: Contract expires
-- **Settlement**: Automatically settles at final oracle price
+- **Settlement**: Automatically settles at final price
 
 **Example Timeline**:
 ```
@@ -60,21 +60,20 @@ Day 350     → "Roll over available" - can move to next contract
 Day 365     → Contract expires, auto-settles, done
 ```
 
-### Expiration Price (Oracle)
+### Expiration Price
 
 When a contract expires, **who decides the final price?**
 
-Answer: **The Oracle** (data source)
+Answer: **The Official Data Source** 
 
-An **oracle** is a trusted source of information:
-- Bitcoin oracle → CoinGecko, Chainlink, or similar
-- Weather oracle → Weather APIs
-- Stock oracle → Financial data providers
+An **Official Data Source** is a trusted source of information:
+- Bitcoin Official Data Source → CoinGecko, Chainlink, or similar
+- Weather Official Data Source → Weather APIs
+- Stock Official Data Source → Financial data providers
 
 **Important**:
-- Oracle price is what determines settlement
+- Official Data Source price is what determines settlement
 - Must be fair and tamper-proof
-- Dispute resolution if oracle is wrong
 
 ### Roll Over Feature
 
@@ -109,7 +108,7 @@ Why roll over?
 
 **At expiration (Day 365)**:
 
-1. **Oracle fetches final price** (e.g., Bitcoin = $51,500)
+1. **Official Data Source fetches final price** (e.g., Bitcoin = $151,500)
 2. **All positions settle automatically**
 3. **Profit/loss calculated** based on final price
 4. **Funds distributed** to user wallets in USDC
@@ -139,7 +138,7 @@ Wallet receives: 100 + 14.7 = 114.7 USDC ✓
 - Ethereum/USD Futures 2026
 - Solana/USD Futures 2026
 
-**Traditional Assets** (if integrated):
+**Traditional Assets**:
 - Gold/USD
 - Stock indices (S&P 500, DAX)
 - Commodities (oil, natural gas)
@@ -149,19 +148,17 @@ Wallet receives: 100 + 14.7 = 114.7 USDC ✓
 **Dexetera's unique feature**: Anyone can create a contract on any measurable metric.
 
 **Examples users might create**:
-- "Tesla Stock Price End of Year"
+- "Tesla Stock Price"
 - "Global Temperature Change"
-- "Football Match Winner"
-- "FIFA World Cup Goals Total"
 - "Bitcoin Dominance %"
-- "NFL Team Win Total"
-- "Crypto Market Cap Milestone"
+- "Crypto Market Cap"
+- "CO2 in the atmosphere"
+- "Number of Bitcoin Nodes"
 
 **Creator responsibilities**:
 - Define the metric clearly
-- Choose oracle source
-- Ensure oracle can measure it
-- Maintain contract if disputed
+- Choose the Official Data Source 
+- Ensure Official Data Source is accessible and can be automatically read
 
 ## Creating vs Trading Contracts
 
@@ -181,7 +178,7 @@ Steps:
 
 **Advantages**:
 - Metric is already defined
-- Oracle is already confirmed
+- Official Data Source is already confirmed
 - Just trade, don't worry about logistics
 
 ### Creating a New Contract (Advanced)
@@ -192,7 +189,7 @@ You invent a new market for something nobody else created:
 Steps:
 1. Click "Create Contract"
 2. Define metric (description must be clear)
-3. Select oracle (where data comes from)
+3. Select Official Data Source (where data comes from)
 4. Set initial conditions
 5. Pay creation fee
 6. Contract goes live
@@ -200,7 +197,6 @@ Steps:
 ```
 
 **Your responsibilities as creator**:
-- If oracle disputes, you may need to clarify metric
 - Metric must be measurable and verifiable
 - Clear rules about how settlement works
 
@@ -243,7 +239,7 @@ Settlement prices:
 At expiration, if price < entry price: You win
 ```
 
-## Leverage on Futures
+## Leverage on Futures (coming soon)
 
 Futures use leverage just like spot trading.
 
@@ -333,7 +329,7 @@ Nov 1, 2026 (2 months before expiration):
 No roll over. Wait until expiration.
 
 Jan 1, 2027 (Expiration):
-  Oracle settles at: $52,000
+  Official Data Source settles at: $52,000
   Final Profit: 150 × ($2,000/$50,000) = 6 USDC
   Receive: 50 + 6 - fees = ~55.7 USDC
 ```
@@ -370,7 +366,7 @@ Can roll over again in 11 months
 | **Leverage** | Available | Not available |
 | **Settlement** | Automatic at expiration | Manual when you sell |
 | **Extension** | Roll over to next contract | Not needed |
-| **Price source** | Oracle | Real-time market |
+| **Price source** | Official Data Sources | Real-time market |
 
 ## Next Steps
 

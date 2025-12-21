@@ -115,7 +115,7 @@ If you don't have USDC on Ethereum, buy directly on Arbitrum.
 7. Confirm transaction
 8. Coinbase charges withdrawal fee (~5-10 USDC)
 
-**USDC arrives in your Arbitrum wallet in 10-30 minutes.**
+**USDC arrives in your Arbitrum wallet in a few minutes.**
 
 ### Fees for Direct Purchase
 

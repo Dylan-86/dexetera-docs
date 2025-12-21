@@ -6,21 +6,18 @@ title: Getting Started
 
 # Welcome to Dexetera
 
-Dexetera is a **decentralized finance (DeFi) platform** built on the Arbitrum blockchain. It allows you to trade using **smart contracts** without any KYC (Know Your Customer) requirements or account creation.
+Dexetera is a **decentralized finance (DeFi) platform** built on the Hyperliquid blockchain. It allows you to trade using **smart contracts**, without any intermediaries or centralized authorities. This means you have full control over your funds and trades.
 
 ## What Makes Dexetera Different?
 
 ### 100% Decentralized
 Unlike traditional exchanges, Dexetera runs entirely on the blockchain. No company controls your funds. You maintain complete control of your wallet and assets at all times.
 
-### No KYC Required
-You don't need to provide personal information, verify your identity, or create an account. Simply connect your wallet and start trading immediately.
-
 ### Trade Anything
 Users can create and trade contracts on **any measurable metric**. This means you're not limited to traditional assets. Trade cryptocurrency prices, sports statistics, weather data, or any metric you can imagine—as long as someone creates the contract.
 
 ### Fast & Efficient
-Powered by Arbitrum, Dexetera offers lightning-fast transactions with extremely low gas fees compared to Ethereum mainnet.
+Powered by Hyperliquid, Dexetera offers lightning-fast transactions with gas-free trading and low fees. No waiting for confirmations—trade instantly.
 
 ### Transparent & Trustless
 All transactions are recorded on the blockchain. You can verify every trade, contract, and settlement. No intermediaries, no hidden fees.
@@ -32,7 +29,6 @@ All transactions are recorded on the blockchain. You can verify every trade, con
 | **Futures Contracts** | 1-year expiration contracts with the ability to roll over to extend positions |
 | **Longs & Shorts** | Profit from both price increases and decreases |
 | **USDC Only** | All trading uses USDC (USD Coin) on Arbitrum for stability |
-| **No KYC** | Complete privacy—only your wallet address is visible |
 | **User-Created Markets** | Anyone can create new contracts on any measurable metric |
 | **Permissionless** | No approval required from Dexetera—trade whatever you want |
 
@@ -56,7 +52,6 @@ All transactions are recorded on the blockchain. You can verify every trade, con
 
 Dexetera is designed for **experienced traders**. Leverage trading (longs and shorts) can result in rapid losses. Positions can be liquidated if collateral drops below the required threshold. 
 
-**Only trade with funds you can afford to lose.**
 
 ## What's Next?
 

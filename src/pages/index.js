@@ -12,7 +12,7 @@ export default function Home() {
         <div className={styles.hero}>
           <h1 className={styles.title}>Welcome to Dexetera</h1>
           <p className={styles.subtitle}>
-            Dexetera is a decentralized finance platform built on Arbitrum.
+            Dexetera is a decentralized finance platform built on Hyperliquid.
           </p>
           <div className={styles.buttons}>
             <Link 
@@ -26,8 +26,8 @@ export default function Home() {
           <h2>Key Features</h2>
           <ul>
             <li>Lightning-fast transactions</li>
-            <li>Multisig security</li>
-            <li>DEX/DAO integration</li>
+            <li>High security</li>
+            <li>Reliable, transparent and completely verifiable transactions</li>
           </ul>
         </div>
       </main>
