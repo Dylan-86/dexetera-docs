@@ -3,13 +3,19 @@
 .title { font-size: 3rem; margin-bottom: 1rem; }
 .subtitle { font-size: 1.5rem; opacity: 0.8; margin-bottom: 2rem; }
 .buttons { margin: 2rem 0; }
-.buttonPrimary { 
-  background: var(--ifm-color-primary); 
-  color: white; 
-  padding: 1rem 2rem; 
-  border-radius: 6px; 
-  font-weight: 600; 
-  text-decoration: none; 
+.buttonPrimary {
+  background: var(--ifm-color-primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.buttonPrimary:hover {
+  background: var(--ifm-color-primary-dark);
+  color: white;
+  text-decoration: none;
 }
 .features { padding: 4rem 2rem; text-align: center; }
 .features ul { list-style: none; padding: 0; }
