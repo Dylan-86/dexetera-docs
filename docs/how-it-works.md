@@ -15,7 +15,7 @@ This guide walks you through the entire Dexetera trading process, from connectin
 **What you need**:
 - A crypto wallet (MetaMask, Phantom, Wallet Connect, etc.)
 - USDC on Arbitrum network
-- ETH on Arbitrum (for gas fees—usually less than $1)
+- ETH on Arbitrum (needed for gas fees to deposit USDD, usually less than $1). Remember: all trades are gas-free, but you need to pay gas fees to deposit USDC.
 
 **Don't have USDC on Arbitrum?**
 - If you have USDC on Ethereum mainnet or other networks, you need to bridge it
@@ -46,7 +46,7 @@ Once connected, you see:
 **Each contract displays**:
 - How much USDC is locked in this contract
 - Total number of longs vs. shorts
-- **Data Source**: Where the price comes from (official source URL)
+- Data Source: Where the price comes from (official source URL)
 
 **Q: What happens at expiration?**
 A: Your position automatically settles at the last price of the underlying asset at the time of expiration. You receive your profit/loss in USDC.
@@ -243,16 +243,23 @@ T=Day 365 → Contract expires
 A: Yes. Dexetera operates 24/7 since it runs on blockchain. No market hours.
 
 **Q: What if the price moves against me?**
-A: Your position shows a loss in real-time. You can close anytime to realize the loss.
-
-**Q: What if Dexetera goes down?**
-A: Dexetera is decentralized—no central server. Your funds are in smart contracts. You can always access them via blockchain.
+A: Your position shows a loss in real-time. You can close anytime to realize the loss or the profit.
 
 **Q: Can I partially close a position?**
-A: [Clarify: Yes/No based on Dexetera features]. See [FAQ](./faq-troubleshooting.md).
+A: Yes. You can close any amount of your position at any time. 
 
 **Q: What happens at expiration?**
 A: Your position automatically settles at the oracle price. You receive your profit/loss in USDC.
+
+**Q: How do I close my position?**
+A: You can close your position anytime by submitting a "Close Position" transaction.
+
+**Q: Can I roll over my position?**
+A: Yes. You can roll over your position anytime before expiration by submitting a "Roll Over" transaction.
+
+**Q: How do I know if my position is profitable?**
+A: Your position shows a profit or loss in real-time. You can close anytime to realize the profit or limit the loss.
+
 
 ## Next Steps
 

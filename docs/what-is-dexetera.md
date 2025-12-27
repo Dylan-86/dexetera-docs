@@ -6,18 +6,21 @@ title: What is Dexetera?
 
 # What is Dexetera?
 
-Dexetera is a **decentralized exchange (DEX)** for trading synthetic futures contracts. Unlike centralized exchanges (like Coinbase or Kraken), Dexetera has no company, and no central authority. It operates entirely through smart contracts on the Hyperliquid blockchain.
+Dexetera is a **decentralized exchange (DEX)** for trading synthetic futures contracts. Unlike centralized exchanges (like Coinbase, Binance or Kraken), Dexetera has no company, and no central authority. It operates entirely through smart contracts on the Hyperliquid blockchain. Decentralized means that no single entity controls the platform, and users have full control over their funds.
 
 ## Core Concepts Explained
 
 ### Decentralized vs. Centralized
 
-**Centralized Exchange (CEX)**
-- A company controls your funds
-- You trust the company with your money
-- They collect personal information (KYC)
-- They can freeze accounts or restrict access
-- Risk: Company gets hacked or goes bankrupt
+| **Centralized Exchange (CEX)** | **Dexetera (DEX)** |
+|-------------------------------|---------------------|
+| A company controls your funds | No company controls your funds |
+| You trust the company with your money | You control your funds |
+| They collect personal information | No registration required |
+| They can freeze accounts or restrict access | No restrictions |
+| Risk: Company gets hacked or goes bankrupt | No risk of company failure |
+
+
 
 ### No Company Approval
 
@@ -27,7 +30,7 @@ You don't need Dexetera's permission to:
 - Use leverage
 - Withdraw your money
 
-Everything is **permissionless**—controlled by smart contracts, not people. No registration is needed. Users directly connect their wallets to the platform and can start trading immediately.
+Everything is **permissionless**, controlled by smart contracts, not people. No registration is needed. Users directly connect their wallets to the platform and can start trading immediately.
 
 ## How Dexetera Makes Money (Fees)
 
@@ -63,7 +66,7 @@ A **futures contract** is an agreement to buy or sell something at a future date
 
 ### USDC: Why We Use It
 
-While the entire trading happens on the Hyperliquid network, we use USDC on Arbitrum for deposits and withdrawals.
+While the entire trading happens on the **Hyperliquid network**, we use USDC on Arbitrum for deposits and withdrawals.
 
 **USDC (USD Coin)**
 - A stablecoin pegged to the US Dollar
@@ -91,8 +94,8 @@ Before using Dexetera, you need USDC on Arbitrum. If you have USDC on Ethereum o
 Unlike traditional exchanges where a company decides what you can trade, **on Dexetera, anyone can create a new contract**:
 
 - Create a contract on Bitcoin price
-- Create a contract on the weather temperature in Tokyo
-- Create a contract on sports scores
+- Create a contract on the price of Tesla stock
+- Create a contract on the price of real estate in New York
 - Create a contract on any measurable metric
 
 The creator sets:
@@ -109,7 +112,7 @@ Dexetera is oracle-free. At expiration, contracts are settled based on the last 
 Once a contract exists, any user can:
 - Go **LONG** (bet the metric goes up)
 - Go **SHORT** (bet the metric goes down)
-- Use leverage (optional, controlled by the user)
+- Use leverage (Coming soon - optional, controlled by the user)
 - Close positions anytime before expiration
 - Roll over to extend before expiration
 
@@ -121,7 +124,7 @@ You don't need Dexetera's permission to:
 - Use leverage
 - Withdraw your money
 
-Everything is **permissionless**—controlled by smart contracts, not people.
+Everything is **permissionless**, entirely controlled by smart contracts, not people.
 
 ## Dexetera vs. Other Exchanges
 
@@ -135,14 +138,6 @@ Everything is **permissionless**—controlled by smart contracts, not people.
 | **Fees** | Transparent (blockchain) | Hidden | Hidden |
 | **24/7 trading** | Yes | Limited | Limited |
 
-## Important: This is Trading
-
-Dexetera is designed for:
-
-- Experienced traders comfortable with leverage
-- People who understand smart contracts and blockchain
-- Users who accept the risk of losing their deposit
-- Traders seeking alternative assets and markets
 
 ### Risks You Must Understand
 
@@ -159,17 +154,6 @@ Dexetera is designed for:
 - You control your private keys—no recovery option
 - You must secure your wallet against phishing and hacks
 
-## How Dexetera Makes Money (Fees)
-
-Dexetera charges **trading fees** when you:
-- Open a position
-- Close a position
-- Roll over a contract
-
-These fees are:
-- **Transparent**: Shown before you trade
-- **Blockchain-recorded**: You can verify them on-chain
-- **Used to improve the platform**: Funding development and infrastructure
 
 ## What's Next?
 

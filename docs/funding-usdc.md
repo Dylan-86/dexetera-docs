@@ -60,7 +60,7 @@ Popular bridges for USDC:
 | Across Protocol | ~5 min | Very Low | https://across.to |
 | Arbitrum Bridge | ~5 min | Medium | https://bridge.arbitrum.io |
 
-**Recommended**: Across or Stargate
+>**Recommended**: Across or Stargate
 
 #### Step 3: Connect & Transfer
 

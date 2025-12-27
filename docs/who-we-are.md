@@ -60,16 +60,16 @@ We're not a corporation maximizing profits. We're a team building the future of 
 - Smart contract optimization
 
 ### Coming Soon
-- Additional contract types (options, perpetuals)
+- Leveraged trading
 - Advanced trading tools
 - Integration with other DeFi protocols
-- Enhanced analytics and data
+- Advanced analytics and data
 
 ### Long-term Vision
 - Fully decentralized governance
 - Community voting on platform changes
 - Multiple blockchain networks
-- Enterprise partnerships
+- Large partnerships
 
 ## How We Make Money
 
@@ -139,4 +139,4 @@ Have questions about our vision or operations?
 
 ---
 
-**Dexetera isn't just a platform—it's a movement toward financial freedom and decentralized trading.**
+**Dexetera isn't just a platform. It's a movement toward financial freedom and decentralized trading.**

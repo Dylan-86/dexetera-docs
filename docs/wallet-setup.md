@@ -16,7 +16,8 @@ A crypto wallet is software that stores your private keys and lets you access yo
 - **Personal safe** that only you can open
 - **Key** to access your money on the blockchain
 
-**Important**: Only you can access your wallet. If you lose your private keys, your money is gone forever. Dexetera cannot recover it.
+
+>**Important**: Only you can access your wallet. If you lose your private keys, your money is gone forever. Dexetera cannot recover it.
 
 ## Supported Wallets
 
@@ -246,7 +247,7 @@ Before trading real money:
 - Insufficient USDC balance
 - Wallet not on Arbitrum network
 
-**Note: While all trades on Dexetera are gas-free, you still need a small amount of ETH on Arbitrum in your wallet. This will be used for non-trade transactions, like depositing USDC token on Dexetera, or interacting with other DeFi protocols.**
+>**Note: While all trades on Dexetera are gas-free, you still need a small amount of ETH on Arbitrum in your wallet. This will be used for non-trade transactions, like depositing USDC token on Dexetera, or interacting with other DeFi protocols.**
 
 
 
@@ -258,4 +259,4 @@ Before trading real money:
 
 ---
 
-**Remember**: Your seed phrase is your responsibility. Never share it. Never lose it. Store it securely.
+>**Remember**: Your seed phrase is your responsibility. Never share it. Never lose it. Store it securely.
