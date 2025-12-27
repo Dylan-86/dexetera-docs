@@ -7,7 +7,6 @@ title: Getting Started
 # Welcome to Dexetera
 
 Dexetera is a **decentralized trading platform** for trading smart contracts on the Hyperliquid blockchain. It allows you to trade using **smart contracts**, without any intermediaries or centralized authorities. This means you have full control over your funds and trades.
->>>>>>> REPLACEMENT
 
 ### Trade Anything
 Users can create and trade contracts on **any measurable metric**. This means you're not limited to traditional assets. Trade cryptocurrency prices, sports statistics, weather data, or any metric you can imagine—as long as someone creates the contract. Each contract has a 1-year expiration.

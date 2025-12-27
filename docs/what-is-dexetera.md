@@ -99,7 +99,6 @@ The creator sets:
 - The metric being tracked
 - The initial price or starting point
 - The official source for the price (URL) that determines the final price
->>>>>>> REPLACEMENT
 
 ### The Dexetera Trading Model
 

@@ -99,7 +99,6 @@ Currently: [SPECIFY] You must monitor and close manually.
 ### Q: What happens if I don't close before expiration?
 
 A: **Position auto-settles at the last price of the underlying asset at the time of expiration.**
->>>>>>> REPLACEMENT
 
 2. Settlement at the last price of the underlying asset at the time of expiration
 
