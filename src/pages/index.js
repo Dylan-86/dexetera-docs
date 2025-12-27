@@ -25,7 +25,9 @@ export default function Home() {
         <div className={styles.features}>
           <h2>Key Features</h2>
           <ul>
+            <li>100% decentralized</li>
             <li>Lightning-fast transactions</li>
+            <li>Gas free trading</li>
             <li>High security</li>
             <li>Reliable, transparent and completely verifiable transactions</li>
           </ul>
