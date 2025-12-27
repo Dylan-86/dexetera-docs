@@ -98,11 +98,30 @@ Currently: [SPECIFY] You must monitor and close manually.
 
 ### Q: What happens if I don't close before expiration?
 
-A: **Position auto-settles at oracle price.**
+A: **Position auto-settles at the last price of the underlying asset at the time of expiration.**
+>>>>>>> REPLACEMENT
+
+2. Settlement at the last price of the underlying asset at the time of expiration
+
+### Q: Can the data source be manipulated?
+
+- Multiple data source feeds
+
+For custom contracts, creator chooses data source. Choose reputable sources.
+
+### Q: What if data source disappears?
+
+- Settlement will be based on the last available price from the data source before it disappeared
+
+This is why you should check data source reliability before trading.
+
+A: **Theoretically yes, practically depends on data source.**
+
+- ✓ Bitcoin price (clear, measurable, data source exists)
 
 Steps:
 1. Contract reaches Day 365 (expiration date)
-2. Oracle provides final settlement price
+2. Data Source provides final settlement price
 3. Your position closes automatically
 4. Profit/loss calculated
 5. Funds sent to your wallet in USDC
@@ -361,44 +380,44 @@ Example:
 A: **Position auto-settles.**
 
 1. Automatic closure at expiration
-2. Settlement at oracle price
+2. Settlement at Data Source price
 3. Profit/loss in your wallet
 4. Done (no action needed from you)
 
-### Q: Can the oracle be manipulated?
+### Q: Can the Data Source be manipulated?
 
 A: **Theoretically possible but unlikely.**
 
 Dexetera uses:
 - Established data sources (CoinGecko, Chainlink, etc.)
-- Multiple oracle feeds
+- Multiple Data Source feeds
 - Dispute resolution mechanism
 
-For custom contracts, creator chooses oracle. Choose reputable sources.
+For custom contracts, creator chooses Data Source. Choose reputable sources.
 
-### Q: What if oracle disappears?
+### Q: What if Data Source disappears?
 
 A: **Contract becomes unresolvable.**
 
 Dexetera will:
-- [SPECIFY: Pause contract / Use fallback oracle / Other procedure]
+- [SPECIFY: Pause contract / Use fallback Data Source / Other procedure]
 
 Currently: [SPECIFY YOUR PROCEDURE]
 
-This is why you should check oracle reliability before trading.
+This is why you should check Data Source reliability before trading.
 
 ### Q: Can I create a contract on anything?
 
-A: **Theoretically yes, practically depends on oracle.**
+A: **Theoretically yes, practically depends on Data Source.**
 
 Requirements:
 - Metric must be measurable
-- Oracle must exist and be available
+- Data Source must exist and be available
 - Metric must be publicly verifiable
 - Shouldn't cause manipulation incentives
 
 Examples that work:
-- ✓ Bitcoin price (clear, measurable, oracle exists)
+- ✓ Bitcoin price (clear, measurable, Data Source exists)
 - ✓ Stock price (clear, measurable, data available)
 - ✓ Weather data (measurable, APIs exist)
 

@@ -242,9 +242,13 @@ Before trading real money:
 - Make sure popup blockers are disabled
 
 ### "Transaction rejected"
-- Insufficient gas (need small amount of ETH)
+- Insufficient gas (need small amount of ETH for non-trade transactions)
 - Insufficient USDC balance
 - Wallet not on Arbitrum network
+
+**Note: While all trades on Dexetera are gas-free, you still need a small amount of ETH on Arbitrum in your wallet. This will be used for non-trade transactions, like depositing USDC token on Dexetera, or interacting with other DeFi protocols.**
+
+
 
 ## What's Next?
 

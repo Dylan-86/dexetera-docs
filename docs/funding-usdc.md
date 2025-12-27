@@ -31,8 +31,24 @@ This is the fastest way if you already own USDC on Ethereum mainnet.
 
 You need:
 - USDC on Ethereum mainnet in your wallet
-- Small amount of ETH for gas fees (~$10-20 worth)
+- Small amount of ETH (~$10-20 worth) for gas fees for depositing USDS on Dexetera 
 - Connected wallet (MetaMask)
+
+Note: All trades on Dexetera are gas-free. However, you still need ETH for non-trade transactions like depositing USDC.
+
+Uniswap and other DEXs charge:
+- **Swap fee**: 0.05-1% depending on pair
+- **Gas fee**: $1-5 on Arbitrum
+
+You don't have enough to cover:
+- The amount you want to bridge
+- The bridge fee
+- Gas fee
+
+You don't have enough ETH on Arbitrum for gas fees.
+
+- Bridges and swaps have fees
+- Calculate total cost (amount + fees + gas)
 
 #### Step 2: Choose a Bridge
 

@@ -46,7 +46,13 @@ Once connected, you see:
 **Each contract displays**:
 - How much USDC is locked in this contract
 - Total number of longs vs. shorts
-- Settlement data source (oracle)
+- **Data Source**: Where the price comes from (official source URL)
+
+**Q: What happens at expiration?**
+A: Your position automatically settles at the last price of the underlying asset at the time of expiration. You receive your profit/loss in USDC.
+
+**Q: Do I need to pay gas fees?**
+A: No, all trades are gas-free. The platform pays the gas fees for all trades.
 
 ### Step 4: Open a Position
 

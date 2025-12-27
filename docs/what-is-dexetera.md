@@ -19,6 +19,30 @@ Dexetera is a **decentralized exchange (DEX)** for trading synthetic futures con
 - They can freeze accounts or restrict access
 - Risk: Company gets hacked or goes bankrupt
 
+### No Company Approval
+
+You don't need Dexetera's permission to:
+- Create new contracts
+- Trade existing contracts
+- Use leverage
+- Withdraw your money
+
+Everything is **permissionless**—controlled by smart contracts, not people. No registration is needed. Users directly connect their wallets to the platform and can start trading immediately.
+
+## How Dexetera Makes Money (Fees)
+
+Dexetera charges **trading fees** when you:
+- Open a position
+- Close a position
+- Roll over a contract
+
+These fees are:
+- **Transparent**: Shown before you trade
+- **Blockchain-recorded**: You can verify them on-chain
+- **Used to improve the platform**: Funding development and infrastructure
+
+All trades are gas-free, the platform pays the gas fees for all trades.
+
 **Decentralized Exchange (DEX) like Dexetera**
 - Smart contracts control the trading mechanism
 - You always control your own wallet and private keys
@@ -74,7 +98,12 @@ Unlike traditional exchanges where a company decides what you can trade, **on De
 The creator sets:
 - The metric being tracked
 - The initial price or starting point
-- The data source (oracle) that determines the final price
+- The official source for the price (URL) that determines the final price
+>>>>>>> REPLACEMENT
+
+### The Dexetera Trading Model
+
+Dexetera is oracle-free. At expiration, contracts are settled based on the last price of the underlying asset at the time of expiration. When creating a contract, the user must specify the underlying asset, the expiration date, and an official source for the price (URL). The platform will automatically settle the contract at the last price of the underlying asset at the time of expiration.
 
 ### Anyone Can Trade
 

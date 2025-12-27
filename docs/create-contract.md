@@ -47,25 +47,44 @@ Good contract names:
 - ✓ "S&P 500 Index Level Dec 31, 2026"
 - ✓ "Tesla Stock Price 2026"
 
-### Reliable Oracle
+### Reliable Data Source
 
-Your contract needs a **data source** (oracle) that can:
+Your contract needs a **data source** (official source for the price) that can:
 - Measure the metric
 - Be tamper-proof
 - Be publicly verifiable
 - Exist for 1 year
 
-**Good oracle sources**:
+**Good data sources**:
 - CoinGecko API (for crypto prices)
 - OpenWeather (for weather data)
 - Financial data APIs (for stock/index data)
 - Government agencies (for economic data)
 - Sports APIs (for sports statistics)
 
-**Bad oracle sources**:
+**Bad data sources**:
 - Social media posts (easily faked)
 - Personal websites (can disappear)
 - Unverified data sources
+
+
+1. Select data source type
+2. Provide data source address/API endpoint
+3. Dexetera verifies it's accessible
+4. System tests data source feed
+
+**Important**: Data source must be working and accessible for the entire contract duration.
+
+
+### Good Contract Requirements 
+
+1. **Metric accuracy**: Ensure it can be measured
+2. **Data source reliability**: Verify data source works and is trustworthy
+3. **Clear rules**: Settlement must be unambiguous
+4. **Integrity**: Don't create contracts with hidden advantages
+5. **Dispute resolution**: If data source disputed, help clarify
+
+
 
 ### Moderate Interest
 
@@ -77,7 +96,7 @@ Contracts work best when:
 **Ideal contracts**:
 - Bitcoin/Ethereum price (always popular)
 - Stock prices (broad appeal)
-- Major events with opposing views
+- Major metrics with opposing views
 - Niche metrics with dedicated communities
 
 **Poor contracts**:
@@ -87,25 +106,13 @@ Contracts work best when:
 
 ## Step-by-Step: Creating a Contract
 
-### Step 1: Prepare Your Concept
 
-Before creating, write down:
 
-```
-Contract Name: ________________________
-Metric Description: ______________________
-Oracle/Data Source: _______________________
-Measurement Frequency: ___________________
-Settlement Rules: ________________________
-Expected Interest: ________________________
-Competing Contracts: _____________________
-```
-
-**Example Filled Out**:
+**Contract Example**: 
 ```
 Contract Name: Bitcoin/USD Q4 2026
 Metric: Bitcoin price in US Dollars
-Oracle: CoinGecko API, official closing
+Data Source: CoinGecko API, official closing
 Frequency: Updated every minute
 Settlement: Q4 final Bitcoin price
 Rules: Settlement at 11:59 PM UTC Dec 31, 2026
@@ -151,12 +158,12 @@ settled at CoinGecko closing price on
 January 1, 2027 at 00:00 UTC.
 ```
 
-#### Oracle Selection
+#### Data Source Selection
 
 Choose your data source:
 
 ```
-Popular Oracles:
+Popular Data Sources:
 - CoinGecko: Crypto prices
 - Chainlink: Various metrics
 - OpenWeather: Weather data
@@ -165,12 +172,12 @@ Popular Oracles:
 - Custom API: Any public API
 ```
 
-1. Select oracle type
-2. Provide oracle address/API endpoint
+1. Select Data Source type
+2. Provide Data Source address/API endpoint
 3. Dexetera verifies it's accessible
-4. System tests oracle data feed
+4. System tests Data Source data feed
 
-**Important**: Oracle must be working and accessible for the entire contract duration.
+**Important**: Data Source must be working and accessible for the entire contract duration.
 
 #### Initial Price / Starting Point
 
@@ -210,7 +217,7 @@ But you specify exact dates:
 - **Creation**: January 1, 2026
 - **Expiration**: January 1, 2027
 - **Roll over available**: November 1, 2026 (60 days before)
-- **Settlement oracle check**: December 31, 2026 at midnight UTC
+- **Settlement Data Source check**: December 31, 2026 at midnight UTC
 
 ### Step 5: Review & Confirm
 
@@ -219,7 +226,7 @@ Before submitting:
 **Checklist**:
 - [ ] Contract name is clear
 - [ ] Description explains metric fully
-- [ ] Oracle is reliable and accessible
+- [ ] Data Source is reliable and accessible
 - [ ] Initial price is accurate
 - [ ] Expiration date is reasonable
 - [ ] Settlement rules are unambiguous
@@ -279,8 +286,8 @@ Ways to attract traders:
 Once created, you should:
 
 - **Monitor activity**: Check daily volume
-- **Answer questions**: Traders may ask about oracle
-- **Respond to disputes**: If oracle data disputed, help clarify
+- **Answer questions**: Traders may ask about Data Source
+- **Respond to disputes**: If Data Source data disputed, help clarify
 - **Engage community**: Build reputation as fair creator
 
 ## Common Contract Creation Mistakes
@@ -289,7 +296,7 @@ Once created, you should:
 - "Bitcoin weird things happen 2026"
 - Should be: "Bitcoin/USD settlement price Dec 31, 2026"
 
-❌ **Unreliable oracle**
+❌ **Unreliable Data Source**
 - "I'll manually decide the price"
 - Should be: "CoinGecko official API data"
 
@@ -316,10 +323,10 @@ Once created, you should:
 When you create a contract, you're responsible for:
 
 1. **Metric accuracy**: Ensure it can be measured
-2. **Oracle reliability**: Verify oracle works and is trustworthy
+2. **Data Source reliability**: Verify Data Source works and is trustworthy
 3. **Clear rules**: Settlement must be unambiguous
 4. **Integrity**: Don't create contracts with hidden advantages
-5. **Dispute resolution**: If oracle disputed, help clarify
+5. **Dispute resolution**: If Data Source disputed, help clarify
 
 ### Dexetera's Role
 
@@ -333,13 +340,13 @@ Dexetera **cannot**:
 - Recover funds sent to wrong addresses
 - Reverse completed trades
 - Modify settlement after creation
-- Force oracle to pay if they disappear
+- Force Data Source to pay if they disappear
 
 ### Your Liability
 
 By creating a contract, you acknowledge:
 - Metric might become unmeasurable
-- Oracle might fail during contract life
+- Data Source might fail during contract life
 - Disputes might occur (you help resolve)
 - No insurance on trader funds
 
@@ -349,7 +356,7 @@ By creating a contract, you acknowledge:
 
 ```
 Metric: Bitcoin price in USD
-Oracle: CoinGecko API
+Data Source: CoinGecko API
 Expected traders: Thousands
 Trading volume: Very high
 Your fees: [HIGH]
@@ -360,18 +367,18 @@ Reason: Bitcoin always popular, clear measurement
 
 ```
 Metric: Tesla stock price end of 2026
-Oracle: Yahoo Finance API
+Data Source: Yahoo Finance API
 Expected traders: Hundreds
 Trading volume: High
 Your fees: [MEDIUM]
-Reason: Stock traders interested, clear oracle
+Reason: Stock traders interested, clear Data Source
 ```
 
 ### Example 3: Niche: "Ethereum Gas Fees Average 2026"
 
 ```
 Metric: Average Ethereum gas price in 2026
-Oracle: Ethereum network data + API
+Data Source: Ethereum network data + API
 Expected traders: Tens
 Trading volume: Medium
 Your fees: [LOW]

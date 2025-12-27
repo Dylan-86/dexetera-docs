@@ -6,7 +6,17 @@ title: Getting Started
 
 # Welcome to Dexetera
 
-Dexetera is a **decentralized finance (DeFi) platform** built on the Hyperliquid blockchain. It allows you to trade using **smart contracts**, without any intermediaries or centralized authorities. This means you have full control over your funds and trades.
+Dexetera is a **decentralized trading platform** for trading smart contracts on the Hyperliquid blockchain. It allows you to trade using **smart contracts**, without any intermediaries or centralized authorities. This means you have full control over your funds and trades.
+>>>>>>> REPLACEMENT
+
+### Trade Anything
+Users can create and trade contracts on **any measurable metric**. This means you're not limited to traditional assets. Trade cryptocurrency prices, sports statistics, weather data, or any metric you can imagine—as long as someone creates the contract. Each contract has a 1-year expiration.
+
+| **Futures Contracts** | 1-year expiration contracts with the ability to roll over to extend positions |
+
+## Important: Understanding Risk
+
+Dexetera is designed for **experienced traders**. Leverage trading (longs and shorts) can result in rapid losses. Positions can be liquidated if collateral drops below the required threshold. All trades happen on Hyperliquid and are verifiable.
 
 ## What Makes Dexetera Different?
 
