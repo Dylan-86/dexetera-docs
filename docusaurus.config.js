@@ -4,7 +4,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Dexetera Docs',
   tagline: 'Trade what you want',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   url: 'https://doc.dexetera.win',
   baseUrl: '/',
