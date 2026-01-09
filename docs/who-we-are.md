@@ -126,9 +126,7 @@ We acknowledge the risks and warn users clearly. High reward requires high respo
 
 Have questions about our vision or operations?
 
-- **General inquiries**: [contact@dexetera.win]
-- **Security issues**: [security@dexetera.win]
-- **Bug reports**: [bugs@dexetera.win]
+- **General inquiries**: [admin@dexetera.xyz]
 - **Community**: Discord server or Twitter
 
 ## What's Next?

@@ -484,7 +484,7 @@ Not found answer here? Check:
 1. **[Documentation](#)** - Full technical docs
 2. **Discord** - Community support
 3. **Twitter** - Announcements and updates
-4. **Email**: [support@dexetera.win]
+4. **Email**: [admin@dexetera.xyz]
 
 ---
 
