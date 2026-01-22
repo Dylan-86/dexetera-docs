@@ -42,10 +42,10 @@ Bad contract names:
 - ❌ "Weather stuff" (too unclear)
 
 Good contract names:
-- ✓ "Bitcoin/USD Price End of 2026"
-- ✓ "Global Average Temperature Change 2026"
-- ✓ "S&P 500 Index Level Dec 31, 2026"
-- ✓ "Tesla Stock Price 2026"
+- ✓ "Bitcoin/USD Price"
+- ✓ "Global Average Temperature Change"
+- ✓ "S&P 500 Index Level"
+- ✓ "Tesla Stock Price"
 
 ### Reliable Data Source
 
@@ -106,7 +106,12 @@ Contracts work best when:
 
 ## Step-by-Step: Creating a Contract
 
+### Step 1: Decide which metric you want to measure
 
+Once you have decided on the metric, you can use our AI to generate the contract. Simply click on the "Create Contract" button and follow the instructions. The AI will guide you through the process and help you create a contract that is ready to be deployed.
+It is important that you provide a complete and clear description of the metric you want to measure, so that the AI can generate the proper name for the contract and find the relevant data source to be used to settle the contract.
+
+You can also provide your own URL for the data source, if you have one. This is useful if you want to use a custom data source that is not available in the list of popular data sources. The data source will be verified by our AI to ensure that it is reliable, trustworthy and accessible.
 
 **Contract Example**: 
 ```
@@ -114,21 +119,19 @@ Contract Name: Bitcoin/USD Q4 2026
 Metric: Bitcoin price in US Dollars
 Data Source: CoinGecko API, official closing
 Frequency: Updated every minute
-Settlement: Q4 final Bitcoin price
+Settlement: Q4/2026 final Bitcoin price
 Rules: Settlement at 11:59 PM UTC Dec 31, 2026
 Interest: Very high (Bitcoin traders)
 Competitors: 5 similar Bitcoin contracts
 ```
 
-### Step 2: Open Dexetera Create Page
+### Step 2: Check the Contract Details
 
-1. Go to Dexetera website
-2. Click "Create Contract" or "New Market"
-3. You'll see the contract creation form
-
-### Step 3: Fill in Contract Details
+The AI will provide you with a contract name, description, data source, settlement, rules, interest and competitors. Review them carefully and make sure they are correct. If you are satisfied with the contract, you can proceed to the next step.
 
 #### Contract Name
+
+The contract name is usually provided by our AI, and we discourage users from manually editing it, in order to keep the names consistent and avoid confusion.
 
 **Format**: "[METRIC] [YEAR/TIMEFRAME]"
 
@@ -177,7 +180,7 @@ Popular Data Sources:
 3. Dexetera verifies it's accessible
 4. System tests Data Source data feed
 
-**Important**: Data Source must be working and accessible for the entire contract duration.
+**Important**: Data Source must be working and accessible for the entire contract duration. Our AI will verify this for you.
 
 #### Initial Price / Starting Point
 
@@ -186,38 +189,21 @@ What's the current measurement?
 ```
 Example: Bitcoin/USD 2026
 Initial Price: $50,000 (today's Bitcoin price)
+The price can also be a fraction of the current price, for example 1/100 of the current price, so in this example the initial price would be $500. Our AI will suggest the best initial price for you.
 
 Example: Weather Contract
 Starting: 15°C (current average)
+In this case the initial price could be 15 $. Our AI will suggest the best initial price for you.
 ```
 
-This helps traders understand where you're starting from.
+The initial price helps traders understand where you're starting from, and ideally it should reflect the current market price or value.
 
-#### Leverage Options
-
-Decide maximum leverage allowed on your contract:
-
-Options:
-- 1x only (safest)
-- 1-5x (moderate)
-- 1-10x (aggressive)
-- [CUSTOM]
-
-**Note**: Higher leverage means:
-- More attractive to risk-takers
-- More liquidations
-- More volatile price movements
-- More trading activity (more fees for you)
 
 ### Step 4: Set Expiration & Timeline
 
 **Standard on Dexetera**: 1 year
 
-But you specify exact dates:
-- **Creation**: January 1, 2026
-- **Expiration**: January 1, 2027
-- **Roll over available**: November 1, 2026 (60 days before)
-- **Settlement Data Source check**: December 31, 2026 at midnight UTC
+Right now all contracts are set to expire in 1 year, but we plan to add more options in the future. Contracts can be rolled over for a fee before their expiration date, but this is not mandatory.
 
 ### Step 5: Review & Confirm
 
@@ -230,7 +216,6 @@ Before submitting:
 - [ ] Initial price is accurate
 - [ ] Expiration date is reasonable
 - [ ] Settlement rules are unambiguous
-- [ ] Leverage limits are set
 - [ ] No conflicting contracts exist
 
 **Then**:
@@ -256,7 +241,6 @@ Once live, you can drive interest:
 ```
 🚀 New market on Dexetera: Bitcoin/USD 2026
 📊 Trade Bitcoin price for next year
-🎯 Available leverage: 1-10x
 💰 [Expected APY from fees]
 Join now: [link]
 ```
@@ -300,21 +284,14 @@ Once created, you should:
 - "I'll manually decide the price"
 - Should be: "CoinGecko official API data"
 
-❌ **Timeframe too short**
-- 1-week contracts (too hectic)
-- Use 1-year standard or clear rationale for shorter
 
 ❌ **Competing with established contracts**
-- Creating 100th Bitcoin contract
+- Creating 100th Bitcoin contract - we strongly discourage creating contracts that are similar to existing contracts.
 - Better: Find niche not covered
 
 ❌ **No promotion**
 - Create and hope people find it
 - Should: Share actively on social media
-
-❌ **Unclear settlement rules**
-- "Settles when it settles"
-- Should: "Settles at 11:59 PM UTC Jan 1, 2027 at CoinGecko price"
 
 ## Legal & Responsibility Notes
 

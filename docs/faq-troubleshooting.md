@@ -19,6 +19,8 @@ A: **No account needed.** You just connect your wallet. Your wallet IS your acco
 - No personal information required
 - Connect wallet = Done
 
+If someone asks you for your password, it's a scam. If you see a website that claims to be Dexetera and asks for your password, it's a scam. If you see a website that claims to be Dexetera and asks for your private key, it's a scam. No one at Dexetera will ask for your private key, and you should never share it with anyone.
+
 ### Q: What if I forget my password?
 
 A: **There is no password to remember.**
@@ -29,6 +31,8 @@ If you forget wallet password:
 1. Recover using seed phrase
 2. See your wallet's recovery process
 3. Dexetera has nothing to do with it
+
+Remember: Dexetera doesn't have access to your private key, it cannot recover it for you, and Dexetera will never ask for your private key.
 
 ### Q: Can someone else access my account?
 
@@ -55,22 +59,20 @@ What's NOT visible:
 
 ### Q: What's the minimum deposit?
 
-A: **[SPECIFY_MINIMUM] USDC**
+A: **1 USDC**
 
 But practically, you need to account for:
-- Minimum amount to open position
+- Minimum amount to open position 
 - Trading fees
-- Gas fees
+- Gas fees to deposit (trading is completely gas-less and you will only have to pay gas fees to deposit and authorize the trading)
 
-**Recommended**: Start with [RECOMMENDED_MIN] USDC to have room for learning.
+**Recommended**: Start with 100 USDC to have room for learning.
 
 ### Q: Can I partially close a position?
 
-A: **[Specify: Yes/No based on Dexetera features]**
+A: **Yes.**
 
-Currently: You close entire position at once. No partial closes.
-
-(May be added in future)
+You can buy and sell futures and partially close your positions.
 
 ### Q: How long can I hold a position?
 
@@ -80,7 +82,7 @@ You can hold for:
 - Minutes (day trade)
 - Days (swing trade)
 - Months (position trade)
-- Up to 1 year (contract expires)
+- Until the contract expiration
 
 Before expiration, you can:
 - Close position (lock in profit/loss)
@@ -88,35 +90,21 @@ Before expiration, you can:
 
 ### Q: Can I set a stop loss automatically?
 
-A: **[Specify: Yes/No based on Dexetera features]**
+A: **Yes**
 
-Currently: [SPECIFY] You must monitor and close manually.
-
-(Stop loss automation may be added)
-
-**For now**: Set price alerts in MetaMask or another service, then close manually when alert triggers.
+You can set a stop loss automatically.
 
 ### Q: What happens if I don't close before expiration?
 
 A: **Position auto-settles at the last price of the underlying asset at the time of expiration.**
 
-2. Settlement at the last price of the underlying asset at the time of expiration
-
 ### Q: Can the data source be manipulated?
 
-- Multiple data source feeds
-
-For custom contracts, creator chooses data source. Choose reputable sources.
+- No, when a contract is created, our AI validates the data source. We only accept reputable data sources that are not supposed to be manipulated.
 
 ### Q: What if data source disappears?
 
 - Settlement will be based on the last available price from the data source before it disappeared
-
-This is why you should check data source reliability before trading.
-
-A: **Theoretically yes, practically depends on data source.**
-
-- ✓ Bitcoin price (clear, measurable, data source exists)
 
 Steps:
 1. Contract reaches Day 365 (expiration date)
@@ -125,7 +113,7 @@ Steps:
 4. Profit/loss calculated
 5. Funds sent to your wallet in USDC
 
-**No action needed**, but you won't be able to extend after this point.
+**No action needed**, but you won't be able to trade further this future after this point.
 
 ### Q: Can I roll over multiple times?
 
@@ -137,16 +125,11 @@ Each roll-over:
 - Restarts liquidation price calculation
 - Gives another year to trade
 
-### Q: Is there a maximum leverage?
+### Q: Can I trade with leverage?
 
-A: **[SPECIFY_MAXIMUM]x maximum.**
+A: **No**
 
-Leverage limits depend on:
-- Contract type
-- Your account history
-- Platform risk management
-
-Start conservatively, build reputation, increase over time.
+Right now, leverage is not supported.
 
 ## Fees & Costs Questions
 
@@ -161,7 +144,7 @@ A: Fees fund:
 
 ### Q: Can fees change?
 
-A: **[Specify: Yes/No]**
+A: **Yes**
 
 Currently: Fees are [CURRENT_RATES].
 
@@ -184,15 +167,14 @@ You pay:
 
 All fees visible before confirming transaction.
 
-### Q: Can I reduce fees?
+### Q: Are there ways to reduce fees?
 
 A: **No volume discounts** currently.
 
 Fee reduction strategies:
 1. Hold longer (fewer trades = fewer fees)
-2. Use less leverage (smaller positions = lower fees)
-3. Bundle positions (fewer open trades)
-4. Wait for fee reductions (may happen in future)
+2. Bundle positions (fewer open trades)
+3. Wait for fee reductions (may happen in future)
 
 ### Q: Do I pay fees even if I lose?
 
@@ -207,8 +189,6 @@ Close position (pay fee again)
 Total cost: Deposit + Fee + Fee + Loss
 ```
 
-This is why fees matter more with leverage.
-
 ## Technical Issues
 
 ### Q: My position won't open - "Insufficient funds"
@@ -216,17 +196,15 @@ This is why fees matter more with leverage.
 **Cause**: You don't have enough USDC for:
 - Position amount
 - Opening fee
-- Gas fee
-- Margin reserve
+
 
 **Fix**:
 1. Add more USDC to wallet
 2. Or reduce position size
-3. Or use less leverage
 
 **Check**:
 ```
-Total needed = Amount + (Amount × Leverage × Fee%) + Gas
+Total needed = Amount + (Amount × Leverage × Fee%)
 ```
 
 ### Q: Position is stuck/frozen
@@ -236,7 +214,7 @@ Total needed = Amount + (Amount × Leverage × Fee%) + Gas
 **Fix**:
 1. Refresh page
 2. Wait 2-5 minutes
-3. Check on Arbiscan.io for transaction status
+3. Check on Hyperliquid blockchain for transaction status
 4. If "failed" - it was rejected, funds returned
 
 ### Q: Can't connect wallet
@@ -248,7 +226,7 @@ Total needed = Amount + (Amount × Leverage × Fee%) + Gas
    - Not Ethereum mainnet!
 
 2. **Browser extension disabled**
-   - Make sure MetaMask/Phantom extension is ON
+   - Make sure MetaMask or your wallet extension is ON
    - Refresh page
 
 3. **Popup blocked**
@@ -256,21 +234,8 @@ Total needed = Amount + (Amount × Leverage × Fee%) + Gas
    - Try different browser if issue persists
 
 4. **Wallet not installed**
-   - Download MetaMask from official site
+   - Download MetaMask or your wallet from official site
    - Not from random download link
-
-### Q: Gas fee too high
-
-**Note**: Gas fees are NOT Dexetera fees. They're Arbitrum network costs.
-
-**Causes**:
-- Network congestion (high demand)
-- Complex transaction
-
-**Fixes**:
-1. Try again later (when network is less busy)
-2. Gas fees fluctuate by time of day/week
-3. Usually very low on Arbitrum (cheaper than Ethereum)
 
 ### Q: USDC balance shows zero even though I have funds
 
@@ -298,25 +263,8 @@ Total needed = Amount + (Amount × Leverage × Fee%) + Gas
 - Transaction error
 
 **Fix**:
-1. Check on Arbiscan.io
-   - Paste your wallet address
-   - Look for your transaction
-2. If "failed" - funds returned, try again
-3. If "pending" - wait up to 10 minutes
-4. If still pending after 10 min - contact support
-
-### Q: Liquidation happened too fast
-
-**Why it's fast**:
-- Smart contracts don't have emotions
-- They execute instantly when price hits limit
-- No human can stop it
-
-**Prevention**:
-1. Use lower leverage (5x or less)
-2. Monitor position constantly
-3. Close before liquidation price
-4. Don't use high leverage on volatile assets
+1. If "pending" - wait up to 10 minutes
+2. If still pending after 10 min - contact support
 
 ## Position & Trading Questions
 
@@ -336,15 +284,6 @@ Process:
 2. Open SHORT position (use USDC)
 
 Or open opposite position while keeping first one open (two positions at once).
-
-### Q: My position shows loss - should I close it?
-
-**Decision depends**:
-- Is loss due to temporary price swing? → Maybe hold
-- Are you below stop loss? → Close now
-- Getting close to liquidation? → Close immediately
-
-**Rule**: Don't hold losses hoping they recover. Have a plan.
 
 ### Q: Can I borrow money to trade?
 
@@ -418,7 +357,7 @@ Requirements:
 Examples that work:
 - ✓ Bitcoin price (clear, measurable, Data Source exists)
 - ✓ Stock price (clear, measurable, data available)
-- ✓ Weather data (measurable, APIs exist)
+- ✓ Weather data like temperature, total rainfall in mm(measurable, APIs exist)
 
 Examples that don't work:
 - ✗ "Something amazing happens" (too vague)
@@ -450,14 +389,14 @@ A: **No.** Funds held in smart contracts, not Dexetera servers.
 - Dexetera can't freeze accounts
 - Dexetera can't reverse trades
 
-Smart contracts are transparent and audited.
+Smart contracts are transparent.
 
 ### Q: What if my wallet gets hacked?
 
 A: **Funds can be stolen if hacker gets private key.**
 
 **Protection**:
-1. Use hardware wallet (Ledger, Trezor) for large amounts
+1. Use hardware wallet (like Trezor) for large amounts
 2. Never share private key
 3. Use strong passwords
 4. Don't click suspicious links
@@ -473,9 +412,8 @@ A: **Funds can be stolen if hacker gets private key.**
 A: **Smart contracts are trustless, not trust-requiring.**
 
 - Code is open-source (verifiable)
-- Audited by security firms
 - Transparent transactions
-- You don't trust Dexetera, you trust the code
+- You don't have to trust Dexetera, you trust the code
 
 ## Still Have Questions?
 

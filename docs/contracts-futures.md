@@ -6,7 +6,7 @@ title: Understanding Contracts & Futures
 
 # Understanding Contracts & Futures
 
-This guide explains what futures contracts are and how they work on Dexetera.
+This guide explains what futures contracts are and how they work on Dexetera. While Dexetera does not currently offer leveraged futures contracts, this documentation provides a clear understanding of how futures contracts work and how they can be used to trade on Dexetera, and how leveraged products work, too.
 
 ## What is a Futures Contract?
 
