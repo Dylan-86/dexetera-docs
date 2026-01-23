@@ -34,14 +34,12 @@ This guide walks you through the entire Dexetera trading process, from connectin
 
 ### Step 3: View Available Contracts
 
-Once connected, you see:
+Once connected, you can search for contracts. You will see a list of contracts in the homepage and there is a search bar to search for contracts.
 
 **Contract List** showing:
 - Contract name (e.g., "Bitcoin/USD Futures 2026")
 - Current price
-- Trading volume
 - Time until expiration
-- Available leverage options
 
 **Each contract displays**:
 - How much USDC is locked in this contract
@@ -62,7 +60,6 @@ A: No, all trades are gas-free. The platform pays the gas fees for all trades.
 2. Choose:
    - **Direction**: LONG (price goes up) or SHORT (price goes down)
    - **Amount**: How much USDC to deposit
-   - **Leverage**: 1x to [MAX - depends on contract] (optional)
 3. Review the **order summary**:
    - Entry price
    - Liquidation price
@@ -74,16 +71,20 @@ A: No, all trades are gas-free. The platform pays the gas fees for all trades.
 
 #### Option B: Create a New Contract
 
+Dexetera allows you to create your own contracts. You can create a contract for any event that has a clear measurable outcome and a reliable data source.
+
 1. Click "Create Contract"
 2. Define the contract:
    - **Metric**: What you want to trade (e.g., "Bitcoin Price")
-   - **Data Source**: Where the price comes from (oracle)
+   - **Data Source**: Where the price comes from (official source URL)
    - **Expiration**: When the contract ends (default: 1 year)
    - **Initial Price**: Starting point for the metric
 3. Submit transaction
 4. Wait for confirmation
 
 After creation, other traders can immediately trade this contract.
+
+You can read more information about creating a contract here: [Create a Contract](./createcontract.md).
 
 ### Step 5: Monitor Your Position
 
@@ -125,118 +126,6 @@ If your contract is nearing expiration (usually 30-60 days before):
 
 **Note**: Rolling over applies a small fee but keeps your position active.
 
-#### Adjust Leverage (if available)
-
-Some contracts allow you to change leverage without closing:
-
-1. Click "Adjust Leverage"
-2. Enter new leverage amount
-3. Confirm
-4. Your liquidation price updates immediately
-
-## The Math Behind Trading
-
-### How Leverage Works
-
-**Without leverage** (1x):
-- You deposit 100 USDC
-- You control 100 USDC worth of position
-- 20% price move = 20 USDC profit/loss (20% of position)
-
-**With leverage** (5x):
-- You deposit 100 USDC
-- You control 500 USDC worth of position
-- 20% price move = 100 USDC profit/loss (20% of 500 USDC)
-- **BUT** 4% price move = liquidation (your 100 USDC is lost)
-
-### Liquidation Explained
-
-**Liquidation price** = The price where your position is automatically closed to prevent the protocol from losing money.
-
-**Example**:
-- You go LONG with 100 USDC at 5x leverage
-- Entry price: Bitcoin = $50,000
-- Liquidation price: Bitcoin = $40,000
-- If Bitcoin drops to $40,000, your position closes automatically
-- You lose your 100 USDC deposit
-- The protocol prevents you from owing money
-
-### Trading Fees
-
-Dexetera charges fees on:
-
-1. **Opening a position**: [FEE_PERCENTAGE]% of position size
-2. **Closing a position**: [FEE_PERCENTAGE]% of position size
-3. **Rolling over**: [FEE_PERCENTAGE]% of position size
-
-**Example**:
-- You open a 100 USDC position
-- Fees: 100 × [FEE_PERCENTAGE]% = [FEE_AMOUNT] USDC deducted immediately
-- You must profit more than the fees to break even
-
-**See [Fees & Pricing](./fees-pricing.md) for exact rates.**
-
-## Position Examples
-
-### Example 1: Long Bitcoin (Expecting Price Up)
-
-```
-Action: Open Position
-Contract: Bitcoin/USD Futures 2026
-Direction: LONG
-Amount: 100 USDC
-Leverage: 5x
-Entry Price: $50,000
-
-Scenario A (Price goes UP to $55,000):
-- Profit: 5 USDC (before fees)
-- With fees: ~3 USDC profit
-- Return: 3% on 100 USDC
-
-Scenario B (Price goes DOWN to $45,000):
-- Loss: 50 USDC
-- Liquidation triggered
-- Total loss: 100 USDC (entire deposit)
-```
-
-### Example 2: Short Ethereum (Expecting Price Down)
-
-```
-Action: Open Position
-Contract: Ethereum/USD Futures 2026
-Direction: SHORT
-Amount: 50 USDC
-Leverage: 2x
-Entry Price: $3,000
-
-Scenario A (Price goes DOWN to $2,500):
-- Profit: 50 USDC (before fees)
-- With fees: ~47 USDC profit
-- Return: 94% on 50 USDC
-
-Scenario B (Price goes UP to $3,500):
-- Loss: 50 USDC (entire deposit)
-- Liquidation triggered
-```
-
-## Timeline of a Trade
-
-```
-T=0s     → You submit "Open Position" transaction
-T=10-30s → Transaction confirmed on Arbitrum
-T=30s    → Position appears in your "My Positions"
-         → Liquidation price calculated
-         → Real-time monitoring begins
-
-T=Day 1 to 364 → Position active, monitoring price updates
-T=Day 350 → "Roll Over" becomes available (near expiration)
-T=Day 365 → Contract expires
-           → Position auto-settles at final price
-           → Profit/loss transferred to your wallet
-
-(OR you close early anytime)
-```
-
 ## Common Questions
 
 **Q: Can I trade 24/7?**
@@ -269,5 +158,3 @@ A: Your position shows a profit or loss in real-time. You can close anytime to r
 - **Understand risks**: [Risk & Liquidation](./risk-liquidation.md)
 
 ---
-
-**Important**: This is leverage trading. Losses can be rapid and total. Only trade with money you can afford to lose.
