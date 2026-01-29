@@ -84,7 +84,7 @@ Dexetera allows you to create your own contracts. You can create a contract for 
 
 After creation, other traders can immediately trade this contract.
 
-You can read more information about creating a contract here: [Create a Contract](./createcontract.md).
+You can read more information about creating a contract here: [Create a Contract](./create-contract.md).
 
 ### Step 5: Monitor Your Position
 
