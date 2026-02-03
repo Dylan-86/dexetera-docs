@@ -70,12 +70,11 @@ sudo chown -R www-data:www-data "$WEB_ROOT"
 
 # 8. Nginx Configuration
 NGINX_CONF="/etc/nginx/sites-available/$DOMAIN"
-if [ ! -f "$NGINX_CONF" ]; then
-    echo "Creating Nginx configuration..."
-    sudo bash -c "cat > $NGINX_CONF <<EOF
+echo "Updating Nginx configuration..."
+sudo bash -c "cat > $NGINX_CONF <<EOF
 server {
     listen $PORT;
-    server_name $DOMAIN localhost;
+    server_name $DOMAIN localhost 57.129.100.75;
     root $WEB_ROOT;
     index index.html;
 
@@ -93,13 +92,16 @@ server {
     }
 }
 EOF"
-    if [ ! -f "/etc/nginx/sites-enabled/$DOMAIN" ]; then
-        sudo ln -s "$NGINX_CONF" "/etc/nginx/sites-enabled/"
-    fi
-    # Remove default if it exists and conflicts
-    if [ -f "/etc/nginx/sites-enabled/default" ]; then
-        sudo rm /etc/nginx/sites-enabled/default
-    fi
+
+if [ ! -L "/etc/nginx/sites-enabled/$DOMAIN" ]; then
+    echo "Enabling site..."
+    sudo ln -sf "$NGINX_CONF" "/etc/nginx/sites-enabled/"
+fi
+
+# Remove default if it exists and conflicts
+if [ -f "/etc/nginx/sites-enabled/default" ]; then
+    echo "Removing default Nginx site..."
+    sudo rm /etc/nginx/sites-enabled/default
 fi
 
 # 9. Reload Nginx
@@ -108,4 +110,19 @@ sudo nginx -t
 sudo systemctl restart nginx
 
 echo "--- Deployment Complete at $(date) ---"
-echo "Site should be available at http://$DOMAIN (if DNS is configured)"
+echo "Site should be available at:"
+echo "  - http://$DOMAIN"
+echo "  - http://57.129.100.75:$PORT"
+
+echo ""
+echo "--- Diagnostics ---"
+echo "Checking if Nginx is listening on port $PORT:"
+sudo lsof -i :$PORT || echo "WARNING: Nothing is listening on port $PORT!"
+
+echo "Checking Nginx status:"
+sudo systemctl is-active nginx
+
+echo ""
+echo "--- Firewall Check ---"
+echo "If you cannot reach the site, make sure port $PORT is open."
+echo "Command to open port (if using ufw): sudo ufw allow $PORT"
