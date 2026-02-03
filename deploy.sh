@@ -2,7 +2,7 @@
 
 # Configuration
 APP_DIR="/home/ubuntu/dani/dexetera-docs"
-WEB_ROOT="/var/www/doc.dexetera.org"
+WEB_ROOT="/home/ubuntu/dani/dexetera-docs/doc.dexetera.org"
 DOMAIN="doc.dexetera.org"
 PORT="6902" # Internal port for Nginx Proxy Manager to point to
 
