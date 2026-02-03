@@ -4,7 +4,7 @@
 APP_DIR="/home/ubuntu/dani/dexetera-docs"
 WEB_ROOT="/var/www/doc.dexetera.org"
 DOMAIN="doc.dexetera.org"
-PORT="6902"
+PORT="6902" # Internal port for Nginx Proxy Manager to point to
 
 # Exit on error
 set -e
@@ -75,15 +75,22 @@ if [ ! -f "$NGINX_CONF" ]; then
     sudo bash -c "cat > $NGINX_CONF <<EOF
 server {
     listen $PORT;
-    server_name $DOMAIN;
+    server_name $DOMAIN localhost;
     root $WEB_ROOT;
     index index.html;
 
+    # Prevent redirect loops when port doesn't match hostname
+    absolute_redirect off;
+
     location / {
-        try_files \$uri \$uri/ /index.html;
+        try_files \$uri \$uri/ =404;
     }
 
-    # Custom error pages or other configs can go here
+    # Error pages
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
 }
 EOF"
     if [ ! -f "/etc/nginx/sites-enabled/$DOMAIN" ]; then
