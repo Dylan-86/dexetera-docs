@@ -30,5 +30,10 @@ npm run build
 # Note: In a real production environment, you might use PM2 or a systemd service.
 # For now, we will use the serve command which we've configured for port 6902.
 
+
 echo "Deployment complete! You can start the server with: npm run serve"
 echo "The site will be available on port $PORT."
+
+echo "Remember to allow the firewall port $PORT/tcp"
+echo "sudo ufw allow $PORT/tcp"
+echo "sudo ufw reload"
