@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Configuration
-APP_DIR="/home/ubuntu/dani/dexetera-docs"
-WEB_ROOT="/home/ubuntu/dani/dexetera-docs/doc.dexetera.org"
+APP_DIR="/home/ubuntu/ddy/dexetera-docs"
+WEB_ROOT="/home/ubuntu/ddy/dexetera-docs/doc.dexetera.org"
 DOMAIN="doc.dexetera.org"
 PORT="6902" # Internal port for Nginx Proxy Manager to point to
 
@@ -19,7 +19,7 @@ if [ ! -d "$APP_DIR" ]; then
 fi
 
 # If we are already in a git repo but not in the APP_DIR, we should probably stay here if it looks like the right project.
-# But the user specifically asked for /home/ubuntu/dani/dexetera-docs.
+# But the user specifically asked for /home/ubuntu/ddy/dexetera-docs.
 if [ "$(pwd)" != "$APP_DIR" ]; then
     cd "$APP_DIR" || { echo "Failed to enter $APP_DIR"; exit 1; }
 fi
