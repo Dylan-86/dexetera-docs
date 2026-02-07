@@ -16,7 +16,6 @@ A **position** is an active trade you have open on Dexetera. It consists of:
 
 - **Direction**: LONG (betting up) or SHORT (betting down)
 - **Amount**: How much USDC you deposited
-- **Leverage**: How much bigger your position is (1x to max available)
 - **Entry Price**: The price when you opened
 - **Current Price**: What the price is now
 - **Profit/Loss**: Your current gain or loss
@@ -26,7 +25,6 @@ A **position** is an active trade you have open on Dexetera. It consists of:
 Bitcoin/USD Futures 2026
 Direction: LONG
 Amount: 100 USDC
-Leverage: 1x - Dexetera currently only supports 1x leverage
 Entry Price: $50,000
 Current Price: $55,000
 Unrealized P&L: 10 USDC (10%)
@@ -71,7 +69,7 @@ You think a price will **decrease**.
 ```
 Action: Open SHORT position
 Contract: Ethereum/USD
-Amount: 100 USDC at 1x leverage
+Amount: 100 USDC
 Entry: $3,000
 
 If Ethereum goes to $2,500:
@@ -81,7 +79,7 @@ If Ethereum goes to $3,500:
   Loss: 100 USDC × (-500/3,000) = -16.67 USDC ✗
 ```
 
-If the price of Ethereum goes above $6,000, you will be liquidated.
+If the price of Ethereum doubles to $6,000, you will be liquidated.
 
 
 ## Opening a Position: Step by Step
@@ -169,7 +167,6 @@ Setup:
 - Direction: LONG (betting up)
 - Entry Price: $50,000
 - Amount: 100 USDC
-- Leverage: 1x
 
 Position Value: 100 USDC
 
@@ -190,7 +187,6 @@ Setup:
 - Direction: SHORT (betting down)
 - Entry Price: $3,000
 - Amount: 50 USDC
-- Leverage: 1x
 
 Position Value: 50 USDC
 

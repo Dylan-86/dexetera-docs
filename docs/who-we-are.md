@@ -60,7 +60,6 @@ We're not a corporation maximizing profits. We're a team building the future of 
 - Smart contract optimization
 
 ### Coming Soon
-- Leveraged trading
 - Advanced trading tools
 - Integration with other DeFi protocols
 - Advanced analytics and data
@@ -114,7 +113,7 @@ We operate openly. You can see our code, our transactions, our roadmap.
 We reduce reliance on any single entity, including Dexetera itself.
 
 ### User Empowerment
-You decide what to trade, how much leverage to use, when to close positions.
+You decide what to trade, when to close positions.
 
 ### Innovation
 We push boundaries on what's possible in trading.

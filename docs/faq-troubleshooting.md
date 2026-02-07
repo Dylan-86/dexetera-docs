@@ -204,7 +204,7 @@ Total cost: Deposit + Fee + Fee + Loss
 
 **Check**:
 ```
-Total needed = Amount + (Amount × Leverage × Fee%)
+Total needed = Amount + (Amount × Fee%)
 ```
 
 ### Q: Position is stuck/frozen

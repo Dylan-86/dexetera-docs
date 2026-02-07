@@ -27,7 +27,6 @@ Dexetera is a **decentralized exchange (DEX)** for trading synthetic futures con
 You don't need Dexetera's permission to:
 - Create new contracts
 - Trade existing contracts
-- Use leverage
 - Withdraw your money
 
 Everything is **permissionless**, controlled by smart contracts, not people. No registration is needed. Users directly connect their wallets to the platform and can start trading immediately.
@@ -59,10 +58,10 @@ A **futures contract** is an agreement to buy or sell something at a future date
 
 - **1-year expiration**: Each contract lasts for 1 year from creation
 - **Price prediction**: You predict if a price will go up or down
-- **Leverage**: You can control larger positions with smaller deposits (amplifies both gains and losses)
+- **Leverage**: Not available. All trading is 1x (fully collateralized).
 - **Settlement**: When the contract expires, it settles based on the final price
 
-**Example**: You create a futures contract on "Bitcoin price" expiring in 1 year. You go LONG (bet it goes up) with 10 USDC at 5x leverage. If Bitcoin goes up 20%, you might make a profit. If it goes down 20%, you might lose your entire deposit.
+**Example**: You create a futures contract on "Bitcoin price" expiring in 1 year. You go LONG (bet it goes up) with 10 USDC. If Bitcoin goes up 20%, you make a profit. If it goes down 20%, you lose 20% of your deposit.
 
 ### USDC: Why We Use It
 
@@ -112,7 +111,6 @@ Dexetera is oracle-free. At expiration, contracts are settled based on the last 
 Once a contract exists, any user can:
 - Go **LONG** (bet the metric goes up)
 - Go **SHORT** (bet the metric goes down)
-- Use leverage (Coming soon - optional, controlled by the user)
 - Close positions anytime before expiration
 - Roll over to extend before expiration
 
@@ -121,7 +119,6 @@ Once a contract exists, any user can:
 You don't need Dexetera's permission to:
 - Create new contracts
 - Trade existing contracts
-- Use leverage
 - Withdraw your money
 
 Everything is **permissionless**, entirely controlled by smart contracts, not people.
@@ -134,15 +131,15 @@ Everything is **permissionless**, entirely controlled by smart contracts, not pe
 | **Speed** | Instant (blockchain) | 1-2 seconds | Instant |
 | **Privacy** | High | Low | Low |
 | **Asset variety** | Any measurable metric | Pre-selected assets | Limited |
-| **Leverage** | User-controlled | Company-controlled | Company-controlled |
+| **Leverage** | None (1x) | Company-controlled | Company-controlled |
 | **Fees** | Transparent (blockchain) | Hidden | Hidden |
 | **24/7 trading** | Yes | Limited | Limited |
 
 
 ### Risks You Must Understand
 
-1. **Leverage Amplifies Losses**: 5x leverage means a 20% loss wipes out your deposit
-2. **Liquidation**: If your position loses enough value, it can be automatically closed
+1. **Short Selling Risks**: If you go SHORT, you can face liquidation if the price doubles.
+2. **Liquidation**: If your position loses enough value ( SHORT only), it can be automatically closed.
 3. **No Customer Support**: If you send funds to the wrong address, they're gone
 4. **Smart Contract Risk**: Even decentralized exchanges have technical risks
 5. **Market Risk**: The metric you're trading could move against you quickly
@@ -163,4 +160,4 @@ Everything is **permissionless**, entirely controlled by smart contracts, not pe
 
 ---
 
-**Remember**: Only trade with money you can afford to lose. Leverage trading carries significant risk.
+**Remember**: Only trade with money you can afford to lose. Trading carries significant risk.

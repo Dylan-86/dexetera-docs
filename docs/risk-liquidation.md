@@ -26,78 +26,34 @@ Dexetera is leverage trading. You can lose your entire deposit quickly.
 - Profits from previous trades
 - Money you'd be comfortable losing 100% of
 
-### Risk Levels by Leverage
+### Risk Levels
 
-Dexetera does not provide, at this time, leveraged trading.
-
-#### 1x Leverage (Safest)
+#### Long Positions (Safest)
 
 ```
 Deposit: 100 USDC
-Position: 100 USDC
-Risk: You only lose what you put in (in theory)
+Position: 100 USDC (1x)
+Risk: You only lose what you put in.
 
 Scenario:
 - LONG at $50,000
 - Price drops to $0
 - Loss: 100 USDC maximum
-- Liquidation: Impossible (no leverage)
+- Liquidation: Effectively impossible (asset would need to go to $0)
 ```
-This is the only option currently available on Dexetera.
 
-**For completeness, the next sections explain how leveraged products work, but they are not available on Dexetera at this time.**
-
-#### 2-3x Leverage (Moderate Risk)
+#### Short Positions (Moderate Risk)
 
 ```
 Deposit: 100 USDC
-Position: 200-300 USDC
-Risk: Moderate - 10-20% move liquidates you
+Position: 100 USDC (1x)
+Risk: Moderate - Liquidation if price doubles.
 
-Scenario (2x):
-- LONG at $50,000
-- Liquidation at: $40,000 (20% down)
-- You lose everything if price drops 20%
-
-Scenario (3x):
-- LONG at $50,000
-- Liquidation at: $37,500 (25% down)
-- You lose everything if price drops 25%
+Scenario:
+- SHORT at $50,000
+- Liquidation at: $100,000 (100% up)
+- You lose everything if price doubles
 ```
-
-#### 5x+ Leverage (High Risk)
-
-```
-Deposit: 100 USDC
-Position: 500+ USDC
-Risk: High - 5-10% move liquidates you
-
-Scenario (5x):
-- LONG at $50,000
-- Liquidation at: $40,000 (20% down)
-- You lose everything if price drops 20%
-
-Scenario (10x):
-- LONG at $50,000
-- Liquidation at: $45,000 (10% down)
-- You lose everything if price drops only 10%
-
-Scenario (20x):
-- LONG at $50,000
-- Liquidation at: $47,500 (5% down)
-- You lose everything if price drops just 5%
-```
-
-### The Leverage Trap
-
-**New traders often think**:
-"5x leverage = 5x profits, I'll be rich!"
-
-**Reality**:
-- 5x leverage = 5x EVERYTHING
-- 5x profits YES, but
-- 5x losses YES
-- And liquidation is just 20% away
 
 ## How Liquidation Works
 
@@ -105,61 +61,31 @@ Scenario (20x):
 
 **Liquidation** = Your position is automatically closed when losses get too big.
 
-**Why?**: To prevent you from owing money to the protocol.
+**Why?**: To prevent you from owing money to the protocol. Since you cannot lose more than you deposited, the system closes your position before your equity turns negative.
 
 ### Liquidation Price Calculation
 
+For **SHORT** positions, you are betting against the price. If the price goes up, you lose money.
+
 **Formula**:
 ```
-Liquidation Price = Entry Price × (1 - 1/Leverage)
+Liquidation Price = Entry Price × 2
 
-Examples:
-
-1x Leverage:
+Example:
 - Entry: $50,000
-- Liquidation: $50,000 × (1 - 1/1) = $50,000 × 0 = $0
-- (Never liquidates, you only lose what you put in)
-
-2x Leverage:
-- Entry: $50,000
-- Liquidation: $50,000 × (1 - 1/2) = $50,000 × 0.5 = $25,000
-- (50% drop = liquidation)
-
-3x Leverage:
-- Entry: $50,000
-- Liquidation: $50,000 × (1 - 1/3) = $50,000 × 0.667 = $33,350
-- (33% drop = liquidation)
-
-5x Leverage:
-- Entry: $50,000
-- Liquidation: $50,000 × (1 - 1/5) = $50,000 × 0.8 = $40,000
-- (20% drop = liquidation)
-
-10x Leverage:
-- Entry: $50,000
-- Liquidation: $50,000 × (1 - 1/10) = $50,000 × 0.9 = $45,000
-- (10% drop = liquidation)
+- Liquidation: $50,000 × 2 = $100,000
+- (100% price increase = liquidation)
 ```
 
-### SHORT Position Liquidation
-
-For SHORT positions, liquidation works in reverse:
-
-```
-SHORT at $50,000 with 5x leverage:
-Liquidation Price: $50,000 × (1 + 1/5) = $50,000 × 1.2 = $60,000
-
-If price goes UP to $60,000, you're liquidated
-(20% move up = liquidation)
-```
-
-
-
+For **LONG** positions, since there is no leverage, liquidation is practically impossible as it would require the asset price to drop to zero (or very close to it depending on fees).
 
 ## Liquidation FAQs
 
-**Q: Can I get liquidated with 1x leverage?**
-A: Yes, for LONGS you can get liquidated at $0. For SHORTS you can get liquidated if the price goes up more than your initial deposit. For example, if you deposit 100 USDC and open a SHORT position at $50,000, you can get liquidated if the price goes up to $100,001.
+**Q: Can I get liquidated with a LONG position?**
+A: Practically no. You are trading with 1x leverage, which means you are fully collateralized. Unless the asset price drops to $0, you will strictly speaking not be liquidated, though your position value could drop significantly.
+
+**Q: Can I get liquidated with a SHORT position?**
+A: Yes. If the price of the asset doubles from your entry price, your loss equals your deposit, and you will be liquidated.
 
 
 

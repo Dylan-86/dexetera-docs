@@ -68,7 +68,7 @@ All transactions are recorded on the blockchain. You can verify every trade, con
 
 ## Important: Understanding Risk
 
-Dexetera is designed for **experienced traders**. Leverage trading (longs and shorts) can result in rapid losses. Positions can be liquidated if collateral drops below the required threshold. 
+Dexetera is designed for **experienced traders**. Trading (longs and shorts) can result in losses. Positions can be liquidated if collateral drops below the required threshold. 
 
 
 ## What's Next?

@@ -28,21 +28,19 @@ When you open a position, you pay a fee immediately.
 **Calculation**:
 ```
 Fee = Position Value × Fee Percentage
-Position Value = Amount × Leverage
+Position Value = Amount
 
 Example:
 Amount: 100 USDC
-Leverage: 5x
-Position Value: 500 USDC
+Position Value: 100 USDC
 Fee Percentage: [FEE_OPEN]%
-Fee Amount: 500 × [FEE_OPEN]% = [FEE_AMOUNT] USDC
+Fee Amount: 100 × [FEE_OPEN]% = [FEE_AMOUNT] USDC
 ```
 
 **Impact on your trade**:
 - You deposit 100 USDC
 - Fee deducted: [FEE_AMOUNT] USDC
 - Actual collateral working: 100 - [FEE_AMOUNT] = [NET] USDC
-- Your liquidation price is calculated on NET amount
 
 ### Closing Position Fee
 
@@ -50,14 +48,13 @@ When you close (sell) your position, you pay another fee.
 
 **Calculation**:
 ```
-Fee = Notional Value × Fee Percentage
+Fee = Position Value × Fee Percentage
 
 Example:
 Opened at: 100 USDC
 Currently worth: 115 USDC (you made profit)
-Leverage: 5x
-Closing notional: 115 × 5 = 575 USDC
-Fee: 575 × [FEE_CLOSE]% = [FEE_AMOUNT] USDC
+Closing value: 115 USDC
+Fee: 115 × [FEE_CLOSE]% = [FEE_AMOUNT] USDC
 ```
 
 **Impact on profit**:
@@ -72,27 +69,26 @@ Fee: 575 × [FEE_CLOSE]% = [FEE_AMOUNT] USDC
 ```
 Setup:
 - Deposit: 50 USDC
-- Leverage: 2x
 - Entry price: Bitcoin $50,000
 - Exit price: Bitcoin $52,000
 
 Fees at opening:
-- Position value: 50 × 2 = 100 USDC
-- Opening fee: 100 × [FEE_OPEN]% = [FEE1] USDC
+- Position value: 50 USDC
+- Opening fee: 50 × [FEE_OPEN]% = [FEE1] USDC
 - Actual collateral: 50 - [FEE1] = [COL] USDC
 
 Trade result:
 - Price moved from $50,000 to $52,000
-- Profit: 100 × ($2,000/$50,000) = 4 USDC
+- Profit: 50 × ($2,000/$50,000) = 2 USDC
 
 Fees at closing:
-- Closing position value: (50 + 4) × 2 = 108 USDC
-- Closing fee: 108 × [FEE_CLOSE]% = [FEE2] USDC
+- Closing position value: 50 + 2 = 52 USDC
+- Closing fee: 52 × [FEE_CLOSE]% = [FEE2] USDC
 
 Final result:
-- Gross profit: 4 USDC
+- Gross profit: 2 USDC
 - Total fees: [FEE1] + [FEE2] = [TOTAL_FEES] USDC
-- Net profit: 4 - [TOTAL_FEES] = [NET] USDC
+- Net profit: 2 - [TOTAL_FEES] = [NET] USDC
 ```
 
 #### Example 2: Losing Trade
@@ -100,27 +96,26 @@ Final result:
 ```
 Setup:
 - Deposit: 100 USDC
-- Leverage: 3x
 - Entry price: Ethereum $3,000
 - Exit price: Ethereum $2,900
 
 Fees at opening:
-- Position value: 100 × 3 = 300 USDC
-- Opening fee: 300 × [FEE_OPEN]% = [FEE1] USDC
+- Position value: 100 USDC
+- Opening fee: 100 × [FEE_OPEN]% = [FEE1] USDC
 - Actual collateral: 100 - [FEE1] = [COL] USDC
 
 Trade result:
 - Price moved from $3,000 to $2,900
-- Loss: 300 × (-$100/$3,000) = -10 USDC
+- Loss: 100 × (-$100/$3,000) = -3.33 USDC
 
 Fees at closing:
-- Closing position value: (100 - 10) × 3 = 270 USDC
-- Closing fee: 270 × [FEE_CLOSE]% = [FEE2] USDC
+- Closing position value: 100 - 3.33 = 96.67 USDC
+- Closing fee: 96.67 × [FEE_CLOSE]% = [FEE2] USDC
 
 Final result:
-- Gross loss: -10 USDC
+- Gross loss: -3.33 USDC
 - Total fees: [FEE1] + [FEE2] = [TOTAL_FEES] USDC
-- Net loss: -10 - [TOTAL_FEES] = [NET_LOSS] USDC
+- Net loss: -3.33 - [TOTAL_FEES] = [NET_LOSS] USDC
 - Remaining: 100 - [NET_LOSS] = [REMAINING] USDC
 ```
 
@@ -133,9 +128,9 @@ If you extend your position before contract expiration using roll-over:
 Fee = Position Value × Roll-over Percentage
 
 Example:
-Position: 100 USDC at 2x leverage
-Position Value: 200 USDC
-Roll-over Fee: 200 × [FEE_ROLLOVER]% = [AMOUNT] USDC
+Position: 100 USDC
+Position Value: 100 USDC
+Roll-over Fee: 100 × [FEE_ROLLOVER]% = [AMOUNT] USDC
 ```
 
 **When charged**: When you click "Roll Over"
@@ -143,17 +138,18 @@ Roll-over Fee: 200 × [FEE_ROLLOVER]% = [AMOUNT] USDC
 **What happens**:
 1. Fee deducted from your account
 2. Position moved to next contract
-3. New liquidation price calculated
+3. New liquidation price calculated (if short)
 
 **Example**:
 ```
-Current position value: 50 USDC at 3x leverage
+Current position value: 50 USDC
 Rolling over 60 days before expiration
-Roll-over fee: 150 × [FEE_ROLLOVER]% = [AMOUNT] USDC
+Roll-over fee: 50 × [FEE_ROLLOVER]% = [AMOUNT] USDC
 New position: Same 50 USDC, now on 2027 contract
 ```
 
 ## Contract Creation Fee
+
 
 If you create a new contract (optional):
 
@@ -221,33 +217,7 @@ FINAL RESULT:
 - Net profit: 19 USDC (minus ETH gas costs)
 ```
 
-## Fee Comparison: Different Leverage
 
-### Same Deposit, Different Leverage
-
-```
-Deposit: 100 USDC
-
-1x Leverage:
-- Position value: 100 USDC
-- Opening fee: 100 × [FEE_OPEN]% = [FEE1]
-- Closing fee: 100 × [FEE_CLOSE]% = [FEE1]
-- Total fees: [FEE1] × 2 = [FEE_TOTAL]
-
-5x Leverage:
-- Position value: 500 USDC
-- Opening fee: 500 × [FEE_OPEN]% = [FEE5]
-- Closing fee: 500 × [FEE_CLOSE]% = [FEE5]
-- Total fees: [FEE5] × 2 = [FEE_TOTAL5]
-
-10x Leverage:
-- Position value: 1000 USDC
-- Opening fee: 1000 × [FEE_OPEN]% = [FEE10]
-- Closing fee: 1000 × [FEE_CLOSE]% = [FEE10]
-- Total fees: [FEE10] × 2 = [FEE_TOTAL10]
-
-Key insight: Higher leverage = Higher fees (proportional to position size)
-```
 
 ## When Fees Are Deducted
 

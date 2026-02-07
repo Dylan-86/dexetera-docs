@@ -1,83 +1,45 @@
 ## Liquidation Examples
 
-### Example 1: 5x Leverage - Bitcoin LONG
+### Example: Bitcoin SHORT (1x)
 
 ```
 Setup:
 - Entry price: $50,000
 - Deposit: 100 USDC
-- Leverage: 5x
-- Position value: 500 USDC
-- Liquidation price: $40,000
+- Position value: 100 USDC (1x)
+- Liquidation price: $100,000 (Price doubles)
 
 Day 1: Price stays at $50,000
 - P&L: 0 USDC ✓
 
-Day 5: Price drops to $45,000
-- Loss: 500 × ($50,000-$45,000)/$50,000 = 50 USDC
+Day 5: Price goes up to $75,000
+- Loss: 100 × ($75,000-$50,000)/$50,000 = 50 USDC
 - Remaining: 50 USDC
-- Warning: Price is closer to liquidation
-- Distance: $45,000 to $40,000 = $5,000 (11% more down)
+- Warning: Price is moving against you
+- Distance: $75,000 to $100,000 = $25,000 (33% more up)
 
-Day 10: Price drops to $40,500
-- Loss: 500 × ($50,000-$40,500)/$50,000 = 47.5 USDC
-- Remaining: 52.5 USDC
+Day 10: Price goes up to $90,000
+- Loss: 100 × ($90,000-$50,000)/$50,000 = 80 USDC
+- Remaining: 20 USDC
 - Critical: Very close to liquidation
 - ⚠️ ACTION NEEDED: Close position to save remaining funds!
 
-Day 15: Price drops to $39,999
+Day 15: Price reaches $100,000
 - LIQUIDATED AUTOMATICALLY
 - Entire 100 USDC deposit: LOST
 - Cannot recover any remaining amount
 ```
 
-### Example 2: 2x Leverage - Ethereum SHORT
-
-```
-Setup:
-- Entry price: $3,000
-- Deposit: 50 USDC
-- Leverage: 2x
-- Position value: 100 USDC
-- Liquidation price: $6,000 (double!)
-
-Day 1: Price stays at $3,000
-- P&L: 0 USDC ✓
-
-Day 3: Price goes to $4,000
-- Loss: 100 × ($4,000-$3,000)/$3,000 = 33 USDC
-- Remaining: 17 USDC
-- Distance to liquidation: $6,000 - $4,000 = $2,000 (50% more up)
-
-Day 5: Price goes to $5,500
-- Loss: 100 × ($5,500-$3,000)/$3,000 = 83 USDC
-- Remaining: ~0 USDC (almost wiped out)
-- Critical: Liquidation very close!
-- ⚠️ CLOSE NOW or get liquidated!
-
-Day 7: Price reaches $6,000
-- LIQUIDATED AUTOMATICALLY
-- All remaining USDC: LOST
-```
-
 ## Strategies to Avoid Liquidation
 
-### 1. Use Low Leverage
+### 1. Monitor Positions Constantly
 
-**Highest protection: 1x leverage**
-- You never liquidate
-- You can only lose what you deposit
-- Slower profits but safer
+**Especially with volatile assets:**
 
-**Safe range: 1-3x leverage**
-- Reasonable profit potential
-- Manageable liquidation distance
-- Recommended for most traders
-
-**Risky: 5x+ leverage**
-- Should only use if you're experienced
-- Must monitor positions constantly
-- Can liquidate very quickly
+- Check position multiple times daily
+- Set price alerts on contract
+- Close if getting close to liquidation
+- Don't sleep through a liquidation
 
 ### 2. Set Stop Losses
 
@@ -86,11 +48,11 @@ Day 7: Price reaches $6,000
 ```
 Trade plan BEFORE opening:
 - Entry price: $50,000
-- Profit target: $52,000 (close here for profit)
-- Stop loss: $48,000 (close here to limit loss)
-- Liquidation: $40,000 (don't wait!)
+- Profit target: $40,000 (close here for profit)
+- Stop loss: $60,000 (close here to limit loss)
+- Liquidation: $100,000 (don't wait!)
 
-If price drops below $48,000:
+If price rises to $60,000:
 - Close position immediately
 - Save remaining capital
 - Avoid bigger losses
@@ -111,24 +73,6 @@ Good: Risk management
 - Use 50-100 USDC per trade
 - Can afford 5-10 losing trades
 - Still have capital to recover
-```
-
-### 4. Monitor Positions Constantly
-
-**Especially with leverage:**
-
-- Check position multiple times daily
-- Set price alerts on contract
-- Close if getting close to liquidation
-- Don't sleep through a liquidation
-
-### 5. Use Low Leverage for Volatile Markets
-
-```
-Bitcoin (Volatile): Use 1-2x max
-Stable assets: Can use 3-5x
-
-The more volatile the asset, the lower leverage.
 ```
 
 ## What Happens When You're Liquidated
@@ -163,39 +107,22 @@ What you lose:
 
 ## Risk Warnings
 
-### Leverage is Dangerous
+### Short Selling Risks
 
-```
-Statistics (not actual Dexetera data, but typical):
-- 1x leverage traders: ~90% don't lose money long-term
-- 2x leverage traders: ~70% lose money
-- 5x leverage traders: ~95% lose all money eventually
-- 10x+ leverage traders: ~99% lose all money
-```
-
-### Losses Are Fast
+When you open a SHORT position, you lose money if the price goes UP. Since asset prices can theoretically go up infinitely, you must be careful.
 
 ```
 Price action timing:
 
-Without leverage (1x):
-- Price drops 20% over 1 week
-- You lose 20% slowly
-- Time to react: Several days
-
-With 5x leverage:
-- Price drops 20% in 1 hour
-- You're liquidated (20% = full loss)
-- Time to react: Minutes
-
-This is why leverage is dangerous.
+If price doubles (increases 100%):
+- Your 1x SHORT position loses 100% of its value.
+- You are liquidated.
 ```
 
 ### Emotional Trading
 
 When you're losing:
-- Don't increase leverage hoping to "recover"
-- Don't open more positions
+- Don't open more positions "revenge trading"
 - Don't trade emotionally
 
 **Close your position, step away, review what went wrong.**
@@ -206,7 +133,7 @@ When you're losing:
 A: Yes. "At Risk" warning appears when you're close. But the warning doesn't stop liquidation.
 
 **Q: Can I deposit more money to avoid liquidation?**
-A: Depends on Dexetera features. Some protocols allow this, others don't. Check documentation.
+A: Depends on Dexetera features. Check documentation for current capabilities.
 
 **Q: What if price liquidates me and then recovers?**
 A: Doesn't matter. Position is closed. You're out. You'd have to re-open (paying fees again).
@@ -218,4 +145,4 @@ A: Automatic. Smart contract does it. You can't stop it.
 A: No. You only lose your deposit. You never owe anything (blockchain design).
 
 
-**Remember**: Low leverage = Long-term survival. High leverage = Fast liquidation. Start safe, build skills, then increase leverage gradually if profitable.
+**Remember**: Liquidation usually happens on SHORT positions when price doubles. Manage your risk carefully.

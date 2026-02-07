@@ -118,15 +118,14 @@ Why roll over?
 Position: LONG Bitcoin
 Entry Price: $50,000
 Amount: 100 USDC
-Leverage: 5x
 Final Price at Expiration: $51,500
 
 Calculation:
-Position Value: 500 USDC (100 × 5)
+Position Value: 100 USDC
 Price change: $51,500 - $50,000 = $1,500
-Profit: 500 × ($1,500/$50,000) = 15 USDC
-Less fees: 15 - 0.3 = 14.7 USDC profit
-Wallet receives: 100 + 14.7 = 114.7 USDC ✓
+Profit: 100 × ($1,500/$50,000) = 3 USDC
+Less fees: 3 - 0.3 = 2.7 USDC profit
+Wallet receives: 100 + 2.7 = 102.7 USDC ✓
 ```
 
 ## Types of Contracts on Dexetera
@@ -213,12 +212,12 @@ Steps:
 
 ```
 Entry: Bitcoin = $50,000
-LONG with 100 USDC at 5x
+LONG with 100 USDC
 
 Settlement prices:
-  $55,000 → You profit 50 USDC ✓
+  $55,000 → You profit 10 USDC ✓
   $50,000 → You break even (minus fees)
-  $45,000 → You lose 50 USDC ✗
+  $45,000 → You lose 10 USDC ✗
   
 At expiration, if price > entry price: You win
 ```
@@ -229,48 +228,17 @@ At expiration, if price > entry price: You win
 
 ```
 Entry: Bitcoin = $50,000
-SHORT with 100 USDC at 5x
+SHORT with 100 USDC
 
 Settlement prices:
-  $45,000 → You profit 50 USDC ✓
+  $45,000 → You profit 10 USDC ✓
   $50,000 → You break even (minus fees)
-  $55,000 → You lose 50 USDC ✗
+  $55,000 → You lose 10 USDC ✗
   
 At expiration, if price < entry price: You win
 ```
 
-## Leverage on Futures (coming soon)
 
-Futures use leverage just like spot trading.
-
-### Leverage Example
-
-```
-BASE: 100 USDC, Bitcoin at $50,000
-
-1x Leverage:
-  Control: 100 USDC
-  10% move = 10 USDC profit/loss
-  Liquidation: Impossible (no leverage)
-
-5x Leverage:
-  Control: 500 USDC
-  10% move = 50 USDC profit/loss
-  Liquidation: 20% move against you
-
-10x Leverage:
-  Control: 1000 USDC
-  10% move = 100 USDC profit/loss
-  Liquidation: 10% move against you
-```
-
-### Leverage Warning
-
-**Higher leverage = Faster liquidation**
-
-Many new traders use too much leverage and lose immediately.
-
-**Rule for futures**: Start with 1-2x leverage maximum.
 
 ## Rolling Over to Extend
 
@@ -305,8 +273,8 @@ Roll-over fees are [SPECIFY_PERCENTAGE]%:
 
 ```
 Example:
-Position: 100 USDC at 5x = 500 USDC notional
-Roll-over fee: 500 × [FEE]% = [AMOUNT] USDC
+Position: 100 USDC
+Roll-over fee: 100 × [FEE]% = [AMOUNT] USDC
 Deducted from your balance
 ```
 
@@ -318,20 +286,19 @@ Deducted from your balance
 Contract: Bitcoin/USD 2026 (expires Jan 1, 2027)
 Position: LONG
 Deposit: 50 USDC
-Leverage: 3x
 Entry Price: $50,000
-Position Value: 150 USDC
+Position Value: 50 USDC
 
 Nov 1, 2026 (2 months before expiration):
   Current Price: $55,000
-  Unrealized Profit: 15 USDC
+  Unrealized Profit: 5 USDC
 
 No roll over. Wait until expiration.
 
 Jan 1, 2027 (Expiration):
   Official Data Source settles at: $52,000
-  Final Profit: 150 × ($2,000/$50,000) = 6 USDC
-  Receive: 50 + 6 - fees = ~55.7 USDC
+  Final Profit: 50 × ($2,000/$50,000) = 2 USDC
+  Receive: 50 + 2 - fees = ~51.7 USDC
 ```
 
 ### Example 2: Roll Over
@@ -340,13 +307,12 @@ Jan 1, 2027 (Expiration):
 Contract: Ethereum/USD 2026 (expires Jan 1, 2027)
 Position: SHORT
 Deposit: 100 USDC
-Leverage: 2x
 Entry Price: $3,000
-Position Value: 200 USDC
+Position Value: 100 USDC
 
 Nov 15, 2026:
   Current Price: $2,800
-  Unrealized Profit: 13.33 USDC
+  Unrealized Profit: 6.67 USDC
   Roll over available ✓
 
 You believe Ethereum will stay low. Roll over!
@@ -363,7 +329,7 @@ Can roll over again in 11 months
 | Feature | Futures (Dexetera) | Spot Trading |
 |---------|-------------------|------------|
 | **Expiration** | 1 year (settles) | Never (hold forever) |
-| **Leverage** | Available | Not available |
+| **Short Selling** | Available | Not available |
 | **Settlement** | Automatic at expiration | Manual when you sell |
 | **Extension** | Roll over to next contract | Not needed |
 | **Price source** | Official Data Sources | Real-time market |
