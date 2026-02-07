@@ -11,6 +11,8 @@ const config = {
 
   onBrokenLinks: 'throw',
 
+  scripts: [{ src: '/js/chatbase.js', async: true }],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
