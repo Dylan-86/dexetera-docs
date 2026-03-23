@@ -10,14 +10,11 @@ This guide explains all the costs associated with trading on Dexetera.
 
 ## Fee Structure Overview
 
-Dexetera charges fees at three points in your trading journey:
+Dexetera's fee schedule is structured as follows:
 
-| Action | Fee Type | When | Amount |
-|--------|----------|------|--------|
-| **Open Position** | Trading Fee | When you enter trade | [FEE_OPEN]% |
-| **Close Position** | Trading Fee | When you exit trade | [FEE_CLOSE]% |
-| **Roll Over** | Roll-over Fee | When extending contract | [FEE_ROLLOVER]% |
-| **Create Contract** | Creation Fee | When you create market | [FEE_CREATE] USDC |
+- **Trading Fees**: 0.07% Taker - 0.03% Maker
+- **Market Creation**: Requires a deposit of 100 USDC, which will be refunded when the contract expires.
+- **Market Cancellation**: If the market is cancelled within 10 days of creation, a 5% fee (5 USDC) is applied.
 
 ## Trading Fees (Open & Close)
 
@@ -150,16 +147,15 @@ New position: Same 50 USDC, now on 2027 contract
 
 ## Contract Creation Fee
 
+If you create a new market/contract:
 
-If you create a new contract (optional):
+**Deposit required**: 100 USDC
 
-**One-time fee**: [FEE_CREATE] USDC
+**Refunded**: The 100 USDC deposit will be fully refunded when the contract expires.
 
-**Paid**: When you submit the contract creation form
+**Cancellation rule**: If the market is cancelled within 10 days of creation, a 5% fee (5 USDC) is applied, meaning you will receive 95 USDC back.
 
-**Refunded**: Never (non-refundable)
-
-**Value**: Your contract earns fees from traders, so creation fee is an investment
+**Value**: Your contract earns fees from traders, so creating a market is an investment.
 
 **Example**:
 ```

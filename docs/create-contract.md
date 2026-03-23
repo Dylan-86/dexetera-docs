@@ -220,7 +220,7 @@ Before submitting:
 
 **Then**:
 1. Review all details
-2. Pay creation fee: [CREATION_FEE] USDC
+2. Provide market creation deposit: 100 USDC (Refunded at expiration, 5% fee if cancelled within 10 days)
 3. Click "Create Contract"
 4. Confirm transaction in wallet
 5. Wait for blockchain confirmation
