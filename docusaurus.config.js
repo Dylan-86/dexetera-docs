@@ -6,7 +6,7 @@ const config = {
   tagline: 'Trade what you want',
   favicon: 'img/favicon.svg',
 
-  url: 'https://doc.dexetera.win',
+  url: 'https://doc.dexetera.org',
   baseUrl: '/',
 
   onBrokenLinks: 'throw',
@@ -24,7 +24,7 @@ const config = {
       {
         docs: {
           sidebarPath: './sidebars.js',
-          editUrl: 'https://doc.dexetera.win/docs/',
+          editUrl: 'https://doc.dexetera.org/docs/',
         },
         blog: {
           showReadingTime: true,
